@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CBCFD6DC1CA9662D009990C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6DB1CA9662D009990C6 /* main.m */; };
-		CBCFD6DF1CA9662D009990C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6DE1CA9662D009990C6 /* AppDelegate.m */; };
-		CBCFD6E21CA9662D009990C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6E11CA9662D009990C6 /* ViewController.m */; };
-		CBCFD6E51CA9662D009990C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E31CA9662D009990C6 /* Main.storyboard */; };
+		CB8090A81CA9723500B2460B /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A41CA9723500B2460B /* categories.plist */; };
+		CB8090A91CA9723500B2460B /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A51CA9723500B2460B /* cities.plist */; };
+		CB8090AA1CA9723500B2460B /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A61CA9723500B2460B /* cityGroups.plist */; };
+		CB8090AB1CA9723500B2460B /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A71CA9723500B2460B /* sorts.plist */; };
+		CB8091531CA974B300B2460B /* MTHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091461CA974B300B2460B /* MTHomeController.m */; };
+		CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80914C1CA974B300B2460B /* MTNavigationController.m */; };
+		CB8091551CA974B300B2460B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091501CA974B300B2460B /* AppDelegate.m */; };
+		CB8091561CA974B300B2460B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091511CA974B300B2460B /* main.m */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
-		CBCFD6EA1CA9662D009990C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E81CA9662D009990C6 /* LaunchScreen.storyboard */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
 /* End PBXBuildFile section */
@@ -35,15 +38,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB8090A41CA9723500B2460B /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		CB8090A51CA9723500B2460B /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		CB8090A61CA9723500B2460B /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
+		CB8090A71CA9723500B2460B /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		CB8091451CA974B300B2460B /* MTHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHomeController.h; sourceTree = "<group>"; };
+		CB8091461CA974B300B2460B /* MTHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHomeController.m; sourceTree = "<group>"; };
+		CB80914B1CA974B300B2460B /* MTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationController.h; sourceTree = "<group>"; };
+		CB80914C1CA974B300B2460B /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
+		CB80914F1CA974B300B2460B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB8091501CA974B300B2460B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB8091511CA974B300B2460B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiTuanHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBCFD6DB1CA9662D009990C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CBCFD6DD1CA9662D009990C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CBCFD6DE1CA9662D009990C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBCFD6E01CA9662D009990C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CBCFD6E11CA9662D009990C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CBCFD6E41CA9662D009990C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBCFD6E61CA9662D009990C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CBCFD6E91CA9662D009990C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBCFD6EB1CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBCFD6F01CA9662D009990C6 /* MeiTuanHDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiTuanHDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDTests.m; sourceTree = "<group>"; };
@@ -78,6 +85,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB8090A31CA9723500B2460B /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				CB8090A41CA9723500B2460B /* categories.plist */,
+				CB8090A51CA9723500B2460B /* cities.plist */,
+				CB8090A61CA9723500B2460B /* cityGroups.plist */,
+				CB8090A71CA9723500B2460B /* sorts.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		CB8091421CA974B300B2460B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CB8091431CA974B300B2460B /* Home(首页) */,
+				CB8091491CA974B300B2460B /* Main(主要) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CB8091431CA974B300B2460B /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				CB8091441CA974B300B2460B /* Controller */,
+				CB8091471CA974B300B2460B /* Model */,
+				CB8091481CA974B300B2460B /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		CB8091441CA974B300B2460B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB8091451CA974B300B2460B /* MTHomeController.h */,
+				CB8091461CA974B300B2460B /* MTHomeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB8091471CA974B300B2460B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB8091481CA974B300B2460B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB8091491CA974B300B2460B /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				CB80914A1CA974B300B2460B /* Controller */,
+				CB80914D1CA974B300B2460B /* Model */,
+				CB80914E1CA974B300B2460B /* Other */,
+				CB8091521CA974B300B2460B /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		CB80914A1CA974B300B2460B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB80914B1CA974B300B2460B /* MTNavigationController.h */,
+				CB80914C1CA974B300B2460B /* MTNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB80914D1CA974B300B2460B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB80914E1CA974B300B2460B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CB80914F1CA974B300B2460B /* AppDelegate.h */,
+				CB8091501CA974B300B2460B /* AppDelegate.m */,
+				CB8091511CA974B300B2460B /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CB8091521CA974B300B2460B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CBCFD6CE1CA9662D009990C6 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +205,8 @@
 		CBCFD6D91CA9662D009990C6 /* MeiTuanHD */ = {
 			isa = PBXGroup;
 			children = (
-				CBCFD6DD1CA9662D009990C6 /* AppDelegate.h */,
-				CBCFD6DE1CA9662D009990C6 /* AppDelegate.m */,
-				CBCFD6E01CA9662D009990C6 /* ViewController.h */,
-				CBCFD6E11CA9662D009990C6 /* ViewController.m */,
-				CBCFD6E31CA9662D009990C6 /* Main.storyboard */,
+				CB8091421CA974B300B2460B /* Classes */,
 				CBCFD6E61CA9662D009990C6 /* Assets.xcassets */,
-				CBCFD6E81CA9662D009990C6 /* LaunchScreen.storyboard */,
-				CBCFD6EB1CA9662D009990C6 /* Info.plist */,
 				CBCFD6DA1CA9662D009990C6 /* Supporting Files */,
 			);
 			path = MeiTuanHD;
@@ -117,7 +215,8 @@
 		CBCFD6DA1CA9662D009990C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBCFD6DB1CA9662D009990C6 /* main.m */,
+				CB8090A31CA9723500B2460B /* Plist */,
+				CBCFD6EB1CA9662D009990C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,6 +301,7 @@
 		CBCFD6CF1CA9662D009990C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MT;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = JW;
 				TargetAttributes = {
@@ -243,9 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCFD6EA1CA9662D009990C6 /* LaunchScreen.storyboard in Resources */,
+				CB8090A91CA9723500B2460B /* cities.plist in Resources */,
+				CB8090A81CA9723500B2460B /* categories.plist in Resources */,
+				CB8090AB1CA9723500B2460B /* sorts.plist in Resources */,
 				CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */,
-				CBCFD6E51CA9662D009990C6 /* Main.storyboard in Resources */,
+				CB8090AA1CA9723500B2460B /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCFD6E21CA9662D009990C6 /* ViewController.m in Sources */,
-				CBCFD6DF1CA9662D009990C6 /* AppDelegate.m in Sources */,
-				CBCFD6DC1CA9662D009990C6 /* main.m in Sources */,
+				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
+				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
+				CB8091561CA974B300B2460B /* main.m in Sources */,
+				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +409,6 @@
 			targetProxy = CBCFD6FC1CA9662D009990C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CBCFD6E31CA9662D009990C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBCFD6E41CA9662D009990C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CBCFD6E81CA9662D009990C6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBCFD6E91CA9662D009990C6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CBCFD7021CA9662D009990C6 /* Debug */ = {
@@ -413,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
@@ -424,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
@@ -498,6 +584,7 @@
 				CBCFD7061CA9662D009990C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBCFD7071CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +593,7 @@
 				CBCFD7091CA9662D009990C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBCFD70A1CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +602,7 @@
 				CBCFD70C1CA9662D009990C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
