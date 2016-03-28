@@ -15,6 +15,11 @@
 		CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80914C1CA974B300B2460B /* MTNavigationController.m */; };
 		CB8091551CA974B300B2460B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091501CA974B300B2460B /* AppDelegate.m */; };
 		CB8091561CA974B300B2460B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091511CA974B300B2460B /* main.m */; };
+		CB80915C1CA9801100B2460B /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091591CA9801100B2460B /* UIBarButtonItem+Extension.m */; };
+		CB80915D1CA9801100B2460B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80915B1CA9801100B2460B /* UIView+Extension.m */; };
+		CB8091601CA9830B00B2460B /* const.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80915F1CA9830B00B2460B /* const.m */; };
+		CB8091631CA98A1600B2460B /* MTHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8091621CA98A1600B2460B /* MTHomeTopItem.xib */; };
+		CB8091661CA98EF500B2460B /* MTHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091651CA98EF500B2460B /* MTHomeTopItem.m */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
@@ -49,6 +54,16 @@
 		CB80914F1CA974B300B2460B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB8091501CA974B300B2460B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CB8091511CA974B300B2460B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB8091581CA9801100B2460B /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		CB8091591CA9801100B2460B /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		CB80915A1CA9801100B2460B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		CB80915B1CA9801100B2460B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		CB80915E1CA9830B00B2460B /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
+		CB80915F1CA9830B00B2460B /* const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = const.m; sourceTree = "<group>"; };
+		CB8091611CA9835600B2460B /* const.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = const.pch; sourceTree = "<group>"; };
+		CB8091621CA98A1600B2460B /* MTHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHomeTopItem.xib; sourceTree = "<group>"; };
+		CB8091641CA98EF500B2460B /* MTHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHomeTopItem.h; sourceTree = "<group>"; };
+		CB8091651CA98EF500B2460B /* MTHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHomeTopItem.m; sourceTree = "<group>"; };
 		CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiTuanHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6E61CA9662D009990C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBCFD6EB1CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +149,9 @@
 		CB8091481CA974B300B2460B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB8091621CA98A1600B2460B /* MTHomeTopItem.xib */,
+				CB8091641CA98EF500B2460B /* MTHomeTopItem.h */,
+				CB8091651CA98EF500B2460B /* MTHomeTopItem.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 		CB8091491CA974B300B2460B /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				CB8091571CA9801100B2460B /* Category */,
 				CB80914A1CA974B300B2460B /* Controller */,
 				CB80914D1CA974B300B2460B /* Model */,
 				CB80914E1CA974B300B2460B /* Other */,
@@ -171,6 +190,9 @@
 				CB80914F1CA974B300B2460B /* AppDelegate.h */,
 				CB8091501CA974B300B2460B /* AppDelegate.m */,
 				CB8091511CA974B300B2460B /* main.m */,
+				CB80915E1CA9830B00B2460B /* const.h */,
+				CB80915F1CA9830B00B2460B /* const.m */,
+				CB8091611CA9835600B2460B /* const.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -180,6 +202,17 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CB8091571CA9801100B2460B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CB8091581CA9801100B2460B /* UIBarButtonItem+Extension.h */,
+				CB8091591CA9801100B2460B /* UIBarButtonItem+Extension.m */,
+				CB80915A1CA9801100B2460B /* UIView+Extension.h */,
+				CB80915B1CA9801100B2460B /* UIView+Extension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		CBCFD6CE1CA9662D009990C6 = {
@@ -345,6 +378,7 @@
 			files = (
 				CB8090A91CA9723500B2460B /* cities.plist in Resources */,
 				CB8090A81CA9723500B2460B /* categories.plist in Resources */,
+				CB8091631CA98A1600B2460B /* MTHomeTopItem.xib in Resources */,
 				CB8090AB1CA9723500B2460B /* sorts.plist in Resources */,
 				CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */,
 				CB8090AA1CA9723500B2460B /* cityGroups.plist in Resources */,
@@ -372,10 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB80915D1CA9801100B2460B /* UIView+Extension.m in Sources */,
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
+				CB80915C1CA9801100B2460B /* UIBarButtonItem+Extension.m in Sources */,
+				CB8091661CA98EF500B2460B /* MTHomeTopItem.m in Sources */,
+				CB8091601CA9830B00B2460B /* const.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,10 +536,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "MeiTuanHD/Classes/Main(主要)/Other/const.pch";
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -510,10 +553,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "MeiTuanHD/Classes/Main(主要)/Other/const.pch";
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

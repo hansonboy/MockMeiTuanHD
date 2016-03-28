@@ -1,0 +1,20 @@
+//
+//  const.pch
+//  MeiTuanHD
+//
+//  Created by wangjianwei on 16/3/28.
+//  Copyright © 2016年 JW. All rights reserved.
+//
+
+#ifndef const_pch
+#define const_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef  DEBUG
+#define JWLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define JWLog(xx, ...)
+#endif
+#include "const.h"
+#endif /* const_pch */
