@@ -10,17 +10,32 @@
 #import "UIBarButtonItem+Extension.h"
 #import "MTHomeTopItem.h"
 #import "UIView+Extension.h"
+#import "MTSetCatogeryViewController.h"
 @interface MTHomeController()
+/**
+ *  分类
+ */
+@property (weak,nonatomic) UIBarButtonItem *categoryItem;
+/**
+ *  城市
+ */
+@property (weak,nonatomic) UIBarButtonItem *cityItem;
+/**
+ *  排序
+ */
+@property (weak,nonatomic) UIBarButtonItem *sortItem;
 
 @end
 @implementation MTHomeController
+#pragma mark -初始化
 -(instancetype)init{
     if (self = [super initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]]) {
-        self.collectionView.backgroundColor = [UIColor whiteColor];
+        self.collectionView.backgroundColor = [UIColor redColor];
     }
     return  self;
 }
 
+#pragma mark - 设置导航栏内容
 -(void)viewDidLoad{
     //设置导航栏内容
     [self setupRightBarBtnItem];
@@ -34,29 +49,24 @@
     MTHomeTopItem * category = [[MTHomeTopItem alloc]init];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
     [category addTarget:self action:@selector(changeCategory)];
+    self.categoryItem = categoryItem;
     
     //3.地区
     MTHomeTopItem * city = [[MTHomeTopItem alloc]init];
     [city addTarget:self action:@selector(changeCity)];
     UIBarButtonItem *cityItem = [[UIBarButtonItem alloc]initWithCustomView:city];
+    self.cityItem = cityItem;
    
     //4.排序
     MTHomeTopItem * sort = [[MTHomeTopItem alloc]init];
      [sort addTarget:self action:@selector(sort)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc]initWithCustomView:sort];
+    self.sortItem = sortItem;
     
     self.navigationItem.leftBarButtonItems = @[logoItem,categoryItem,cityItem,sortItem];
 }
--(void)sort{
-    JWLog(@"");
-}
--(void)changeCategory{
-    JWLog(@"");
-    
-}
--(void)changeCity{
-    JWLog(@"");
-}
+
+
 -(void)setupRightBarBtnItem{
 
     UIBarButtonItem *searchItem = [UIBarButtonItem itemWithTarget:self action:@selector(search:) imageName:@"icon_search" selecteImageName:@"icon_search_highlighted"];
@@ -67,10 +77,25 @@
     
     self.navigationItem.rightBarButtonItems = @[mapItem,searchItem];
 }
+#pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
     JWLog(@"");
 }
 -(void)location:(id)sender{
       JWLog(@"");
+}
+
+-(void)sort{
+    JWLog(@"");
+}
+-(void)changeCategory{
+    JWLog(@"");
+    
+}
+-(void)changeCity{
+    JWLog(@"");
+    MTSetCatogeryViewController *setCatogeryVC = [[MTSetCatogeryViewController alloc]init];
+    UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:setCatogeryVC];
+    [popoverController presentPopoverFromBarButtonItem:self.cityItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 @end
