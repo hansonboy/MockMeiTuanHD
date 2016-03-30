@@ -17,6 +17,27 @@
 
 @end
 @implementation MTDropDownView
+#pragma mark 测试下什么时候会调用awakeFromNib：自定义view时候，会吸纳调用initWithCoder:，然后是awakeFromNib 方法
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    JWLog(@"");
+}
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self == [super initWithCoder:aDecoder]) {
+        JWLog(@"");
+    }
+    return self;
+}
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self == [super initWithFrame:frame]) {
+        JWLog(@"");
+    }
+    return self;
+}
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    JWLog(@"");
+}
 -(NSArray *)categories{
     if (_categories == nil) {
         [MTCategory mj_setupObjectClassInArray:^NSDictionary *{
@@ -32,6 +53,7 @@
     dropDown.autoresizingMask = UIViewAutoresizingNone;
     return dropDown;
 }
+
 #pragma mark - UITableView data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.masterTBV) {

@@ -6,17 +6,17 @@
 //  Copyright © 2016年 JW. All rights reserved.
 //
 
-#import "MTSetCatogeryViewController.h"
+#import "MTCatogeryViewController.h"
 #import "MTDropDownView.h"
 #import "MTCategory.h"
 #import "MJExtension.h"
-@interface MTSetCatogeryViewController ()
+@interface MTCatogeryViewController ()
 
 @property (weak,nonatomic) MTDropDownView *dropView;
 
 @end
 
-@implementation MTSetCatogeryViewController
+@implementation MTCatogeryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

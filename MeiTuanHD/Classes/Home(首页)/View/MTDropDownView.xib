@@ -11,14 +11,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="364"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBy-3n-qEt" userLabel="rightView">
-                    <rect key="frame" x="207" y="0.0" width="207" height="364"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="iN0-l3-epB" id="3Q1-EL-Kfx"/>
-                        <outlet property="delegate" destination="iN0-l3-epB" id="Asp-VX-dbx"/>
-                    </connections>
-                </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tge-mK-Fxu" userLabel="leftView">
                     <rect key="frame" x="0.0" y="0.0" width="207" height="364"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,6 +19,14 @@
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="kuD-i3-Yle"/>
                         <outlet property="delegate" destination="iN0-l3-epB" id="GQf-16-JC6"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBy-3n-qEt" userLabel="rightView">
+                    <rect key="frame" x="207" y="0.0" width="207" height="364"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="3Q1-EL-Kfx"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Asp-VX-dbx"/>
                     </connections>
                 </tableView>
             </subviews>

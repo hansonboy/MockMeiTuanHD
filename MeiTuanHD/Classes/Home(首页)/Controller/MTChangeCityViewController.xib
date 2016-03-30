@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTChangeCityViewController">
+            <connections>
+                <outlet property="searchBar" destination="QVd-Eb-6Px" id="7JN-D0-djQ"/>
+                <outlet property="tableView" destination="bBn-yh-W3n" id="1l1-sx-rga"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="请输入城市名称或者拼音" backgroundImage="btn_filter_normal" translatesAutoresizingMaskIntoConstraints="NO" id="QVd-Eb-6Px">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="BDT-NB-Lp3"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bBn-yh-W3n">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LT9-EP-dX8"/>
+                        <outlet property="delegate" destination="-1" id="WPe-FQ-m3Q"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bBn-yh-W3n" secondAttribute="trailing" id="2Lo-lN-ZCB"/>
+                <constraint firstItem="QVd-Eb-6Px" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ms6-Ni-TkE"/>
+                <constraint firstItem="QVd-Eb-6Px" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oro-pL-gMB"/>
+                <constraint firstAttribute="trailing" secondItem="QVd-Eb-6Px" secondAttribute="trailing" id="ga5-5B-KMk"/>
+                <constraint firstItem="bBn-yh-W3n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nEd-9J-F4p"/>
+                <constraint firstItem="bBn-yh-W3n" firstAttribute="top" secondItem="QVd-Eb-6Px" secondAttribute="bottom" id="rce-2e-xJm"/>
+                <constraint firstAttribute="bottom" secondItem="bBn-yh-W3n" secondAttribute="bottom" id="thp-Fg-SFz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_filter_normal" width="5" height="7"/>
+    </resources>
+</document>

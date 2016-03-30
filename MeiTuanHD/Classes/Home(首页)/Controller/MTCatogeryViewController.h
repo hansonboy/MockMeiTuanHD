@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MTSetCatogeryViewController : UIViewController
+@interface MTCatogeryViewController : UIViewController
 
 @end

@@ -23,11 +23,17 @@
 		CB8091661CA98EF500B2460B /* MTHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091651CA98EF500B2460B /* MTHomeTopItem.m */; };
 		CB8091691CA9B25200B2460B /* MTDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8091681CA9B25200B2460B /* MTDropDownView.m */; };
 		CB80916B1CA9B26600B2460B /* MTDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80916A1CA9B26600B2460B /* MTDropDownView.xib */; };
-		CB80916E1CA9B4FD00B2460B /* MTSetCatogeryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80916D1CA9B4FD00B2460B /* MTSetCatogeryViewController.m */; };
+		CB80916E1CA9B4FD00B2460B /* MTCatogeryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB80916D1CA9B4FD00B2460B /* MTCatogeryViewController.m */; };
 		CB91FD121CABA40700B9E74C /* MTCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91FD111CABA40700B9E74C /* MTCategory.m */; };
+		CB91FD151CABC4AC00B9E74C /* MTRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91FD141CABC4AC00B9E74C /* MTRegionViewController.m */; };
+		CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD1D1CABCE5800B9E74C /* MTRegionViewController.xib */; };
+		CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */; };
+		CB91FD231CABE4D500B9E74C /* MTChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
+		CBF0DA901CAC284400362004 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */; };
+		CBF0DA931CAC290E00362004 /* MTSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA921CAC290E00362004 /* MTSortViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +80,16 @@
 		CB8091671CA9B25200B2460B /* MTDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownView.h; sourceTree = "<group>"; };
 		CB8091681CA9B25200B2460B /* MTDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDropDownView.m; sourceTree = "<group>"; };
 		CB80916A1CA9B26600B2460B /* MTDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTDropDownView.xib; sourceTree = "<group>"; };
-		CB80916C1CA9B4FD00B2460B /* MTSetCatogeryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSetCatogeryViewController.h; sourceTree = "<group>"; };
-		CB80916D1CA9B4FD00B2460B /* MTSetCatogeryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSetCatogeryViewController.m; sourceTree = "<group>"; };
+		CB80916C1CA9B4FD00B2460B /* MTCatogeryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCatogeryViewController.h; sourceTree = "<group>"; };
+		CB80916D1CA9B4FD00B2460B /* MTCatogeryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCatogeryViewController.m; sourceTree = "<group>"; };
 		CB91FD101CABA40700B9E74C /* MTCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCategory.h; sourceTree = "<group>"; };
 		CB91FD111CABA40700B9E74C /* MTCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCategory.m; sourceTree = "<group>"; };
+		CB91FD131CABC4AC00B9E74C /* MTRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRegionViewController.h; sourceTree = "<group>"; };
+		CB91FD141CABC4AC00B9E74C /* MTRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRegionViewController.m; sourceTree = "<group>"; };
+		CB91FD1D1CABCE5800B9E74C /* MTRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTRegionViewController.xib; sourceTree = "<group>"; };
+		CB91FD1F1CABE4D500B9E74C /* MTChangeCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTChangeCityViewController.h; sourceTree = "<group>"; };
+		CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTChangeCityViewController.m; sourceTree = "<group>"; };
+		CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTChangeCityViewController.xib; sourceTree = "<group>"; };
 		CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiTuanHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6E61CA9662D009990C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBCFD6EB1CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +99,9 @@
 		CBCFD6FB1CA9662D009990C6 /* MeiTuanHDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiTuanHDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDUITests.m; sourceTree = "<group>"; };
 		CBCFD7011CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		CBF0DA911CAC290E00362004 /* MTSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSortViewController.h; sourceTree = "<group>"; };
+		CBF0DA921CAC290E00362004 /* MTSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSortViewController.m; sourceTree = "<group>"; };
 		F0A03CCE52D427BF89F2EFE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,8 +183,17 @@
 			children = (
 				CB8091451CA974B300B2460B /* MTHomeController.h */,
 				CB8091461CA974B300B2460B /* MTHomeController.m */,
-				CB80916C1CA9B4FD00B2460B /* MTSetCatogeryViewController.h */,
-				CB80916D1CA9B4FD00B2460B /* MTSetCatogeryViewController.m */,
+				CB80916C1CA9B4FD00B2460B /* MTCatogeryViewController.h */,
+				CB80916D1CA9B4FD00B2460B /* MTCatogeryViewController.m */,
+				CB91FD131CABC4AC00B9E74C /* MTRegionViewController.h */,
+				CB91FD141CABC4AC00B9E74C /* MTRegionViewController.m */,
+				CB91FD1D1CABCE5800B9E74C /* MTRegionViewController.xib */,
+				CB91FD1F1CABE4D500B9E74C /* MTChangeCityViewController.h */,
+				CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */,
+				CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */,
+				CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */,
+				CBF0DA911CAC290E00362004 /* MTSortViewController.h */,
+				CBF0DA921CAC290E00362004 /* MTSortViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,11 +447,14 @@
 			files = (
 				CB8090A91CA9723500B2460B /* cities.plist in Resources */,
 				CB8090A81CA9723500B2460B /* categories.plist in Resources */,
+				CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */,
+				CB91FD231CABE4D500B9E74C /* MTChangeCityViewController.xib in Resources */,
 				CB8091631CA98A1600B2460B /* MTHomeTopItem.xib in Resources */,
 				CB8090AB1CA9723500B2460B /* sorts.plist in Resources */,
 				CB80916B1CA9B26600B2460B /* MTDropDownView.xib in Resources */,
 				CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */,
 				CB8090AA1CA9723500B2460B /* cityGroups.plist in Resources */,
+				CBF0DA901CAC284400362004 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,13 +529,16 @@
 			files = (
 				CB80915D1CA9801100B2460B /* UIView+Extension.m in Sources */,
 				CB8091691CA9B25200B2460B /* MTDropDownView.m in Sources */,
-				CB80916E1CA9B4FD00B2460B /* MTSetCatogeryViewController.m in Sources */,
+				CB91FD151CABC4AC00B9E74C /* MTRegionViewController.m in Sources */,
+				CB80916E1CA9B4FD00B2460B /* MTCatogeryViewController.m in Sources */,
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
+				CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */,
 				CB80915C1CA9801100B2460B /* UIBarButtonItem+Extension.m in Sources */,
 				CB8091661CA98EF500B2460B /* MTHomeTopItem.m in Sources */,
+				CBF0DA931CAC290E00362004 /* MTSortViewController.m in Sources */,
 				CB8091601CA9830B00B2460B /* const.m in Sources */,
 				CB91FD121CABA40700B9E74C /* MTCategory.m in Sources */,
 			);

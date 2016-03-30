@@ -10,7 +10,10 @@
 #import "UIBarButtonItem+Extension.h"
 #import "MTHomeTopItem.h"
 #import "UIView+Extension.h"
-#import "MTSetCatogeryViewController.h"
+#import "MTCatogeryViewController.h"
+#import "MTRegionViewController.h"
+#import "MTSortViewController.h"
+#import "MTNavigationController.h"
 @interface MTHomeController()
 /**
  *  分类
@@ -84,18 +87,26 @@
 -(void)location:(id)sender{
       JWLog(@"");
 }
-
 -(void)sort{
+
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
+    MTSortViewController *sortVC =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MTSortViewController"];
+    sortVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:sortVC animated:YES completion:nil];
 }
 -(void)changeCategory{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
-    
+    MTCatogeryViewController *setCatogeryVC = [[MTCatogeryViewController alloc]init];
+    UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:setCatogeryVC];
+    [popoverController presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 -(void)changeCity{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
-    MTSetCatogeryViewController *setCatogeryVC = [[MTSetCatogeryViewController alloc]init];
-    UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:setCatogeryVC];
+    MTRegionViewController *changeCityVC = [[MTRegionViewController alloc]init];
+    UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:changeCityVC];
     [popoverController presentPopoverFromBarButtonItem:self.cityItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 @end

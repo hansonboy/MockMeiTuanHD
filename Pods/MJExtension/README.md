@@ -181,7 +181,7 @@ NSLog(@"text2=%@, name2=%@, icon2=%@", text2, name2, icon2);
 /***********************************************/
 
 // Tell MJExtension what type model will be contained in statuses and ads.
-[StatusResult mj_setupObjectClassInArray:^NSDictionary *{
+[StatusResult :^NSDictionary *{
     return @{
                @"statuses" : @"Status",
                // @"statuses" : [Status class],
