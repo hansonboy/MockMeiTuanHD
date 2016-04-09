@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *masterTBV;
 @property (weak, nonatomic) IBOutlet UITableView *detailTBV;
-@property (weak, nonatomic) MTCategory *selectedCategory;
+@property (assign, nonatomic) NSInteger selectedRowInMasterCell;
 
 @end
 @implementation MTDropDownView
@@ -40,15 +40,7 @@
     [super layoutSubviews];
     JWLog(@"");
 }
--(NSArray *)categories{
-    if (_categories == nil) {
-        [MTCategory mj_setupObjectClassInArray:^NSDictionary *{
-            return @{@"subcategories":@"NSString"};
-        }];
-        _categories = [MTCategory mj_objectArrayWithFilename:@"categories.plist"];
-    }
-    return _categories;
-}
+
 +(instancetype)dropDownView
 {
     MTDropDownView *dropDown = [[[NSBundle mainBundle]loadNibNamed:@"MTDropDownView" owner:self options:nil] lastObject];
@@ -59,35 +51,40 @@
 #pragma mark - UITableView data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.masterTBV) {
-        return self.categories.count;
+        if ([self.dataSource respondsToSelector:@selector(numberOfRowsInMasterTable:)]) {
+            return [self.dataSource numberOfRowsInMasterTable:self];
+        }
     }else{
-        //detailTVB的dataSource
-        return self.selectedCategory.subcategories.count;
+        if ([self.dataSource respondsToSelector:@selector(numberOfRowsInDetailTable:inMasterRow:)]) {
+            return [self.dataSource numberOfRowsInDetailTable:self inMasterRow:self.selectedRowInMasterCell];
+        }
     }
+    return 0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell  = [MTDropDownViewMasterCell dropDownViewMasterCellWithTableView:tableView];
     if (tableView == self.masterTBV) {
-        MTCategory * category = [self.categories objectAtIndex:indexPath.row];
-        cell.textLabel.text = category.name;
-        cell.imageView.image = [UIImage imageNamed:category.small_icon];
-        if (category.subcategories) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }else{
-            cell.accessoryType = UITableViewCellAccessoryNone;
+        if ([self.dataSource respondsToSelector:@selector(dropDownView:titleForRowAtMasterTable:)]) {
+            cell.textLabel.text =  [self.dataSource dropDownView:self titleForRowAtMasterTable:indexPath.row];
+        }
+        if ([self.dataSource respondsToSelector:@selector(dropDownView:imageForRowAtMasterTable:)]) {
+            cell.imageView.image =  [self.dataSource dropDownView:self imageForRowAtMasterTable:indexPath.row];
+        }
+        if ([self.dataSource respondsToSelector:@selector(dropDownView:cellAccessoryTypeForRowAtMasterTable:)]) {
+            cell.accessoryType =  [self.dataSource dropDownView:self cellAccessoryTypeForRowAtMasterTable:indexPath.row];
         }
     }else{
         cell = [MTDropDownViewDetailCell dropDownViewDetailCellWithTableView:tableView];
-        
-        NSArray *dataSourceD = self.selectedCategory.subcategories;
-        cell.textLabel.text = [dataSourceD objectAtIndex:indexPath.row];
+        if ([self.dataSource respondsToSelector:@selector(dropDownView:titleForRowAtDetailTable:inMasterRow:)]) {
+            cell.textLabel.text =  [self.dataSource dropDownView:self titleForRowAtDetailTable:indexPath.row inMasterRow:self.selectedRowInMasterCell];
+        }
     }
     return cell;
 }
 #pragma mark - tableView delegate method
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.masterTBV) {
-        self.selectedCategory = [self.categories objectAtIndex:indexPath.row];
+        self.selectedRowInMasterCell = indexPath.row;
         [self.detailTBV reloadData];
     }
 }

@@ -10,9 +10,9 @@
 #import "MTDropDownView.h"
 #import "MTCategory.h"
 #import "MJExtension.h"
-@interface MTCatogeryViewController ()
+@interface MTCatogeryViewController ()<MTDropDownViewDataSource>
 
-//@property (weak,nonatomic) MTDropDownView *dropView;
+@property (strong,nonatomic) NSArray *categories;
 
 @end
 
@@ -22,18 +22,56 @@
 {
      MTDropDownView *dropView = [MTDropDownView dropDownView];
     self.view = dropView;
+    dropView.dataSource = self;
     self.preferredContentSize = dropView.frame.size;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    MTDropDownView *dropView = [MTDropDownView dropDownView];
-//    [self.view addSubview:dropView];
-//    self.dropView = dropView;
-//    self.preferredContentSize = self.dropView.frame.size;
     
 }
+-(NSArray *)categories{
+    if (_categories == nil) {
+        [MTCategory mj_setupObjectClassInArray:^NSDictionary *{
+            return @{@"subcategories":@"NSString"};
+        }];
+        _categories = [MTCategory mj_objectArrayWithFilename:@"categories.plist"];
+    }
+    return _categories;
+}
+#pragma mark -MTDropDownViewDataSource
+/** 主表中行的数量*/
+-(NSInteger)numberOfRowsInMasterTable:(MTDropDownView *)dropDownView
+{
+    return self.categories.count;
+}
+/** 从表中行的数量*/
+-(NSInteger)numberOfRowsInDetailTable:(MTDropDownView *)dropDownView inMasterRow:(NSInteger)masterRow
+{
+    return [self.categories[masterRow] subcategories].count;
+}
+/** 主表中行的标题*/
+-(NSString *)dropDownView:(MTDropDownView *)dropDownView titleForRowAtMasterTable:(NSInteger)row
+{
+     return [[self.categories objectAtIndex:row] name];
+}
+/** 从表中行的标题*/
+-(NSString *)dropDownView:(MTDropDownView *)dropDownView titleForRowAtDetailTable:(NSInteger)row inMasterRow:(NSInteger)masterRow
+{
+    return [[self.categories[masterRow] subcategories] objectAtIndex:row];
+}
 
-
+/** 主表中行的图片名称*/
+-(UIImage *)dropDownView:(MTDropDownView *)dropDownView imageForRowAtMasterTable:(NSInteger)row
+{
+    return [UIImage imageNamed:[[self.categories objectAtIndex:row] small_icon]];
+}
+/** 主表中行的accessoryType*/
+-(UITableViewCellAccessoryType)dropDownView:(MTDropDownView *)dropDownView cellAccessoryTypeForRowAtMasterTable:(NSInteger)row
+{
+    if ([[[self.categories objectAtIndex:row] subcategories] count] == 0) {
+        return UITableViewCellAccessoryNone;
+    }else
+        return UITableViewCellAccessoryDisclosureIndicator;
+}
 
 @end
