@@ -29,6 +29,8 @@
 		CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD1D1CABCE5800B9E74C /* MTRegionViewController.xib */; };
 		CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */; };
 		CB91FD231CABE4D500B9E74C /* MTChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */; };
+		CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */; };
+		CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494E21CB9530C0067F178 /* MTDropDownViewDetailCell.m */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
@@ -92,13 +94,17 @@
 		CB91FD1F1CABE4D500B9E74C /* MTChangeCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTChangeCityViewController.h; sourceTree = "<group>"; };
 		CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTChangeCityViewController.m; sourceTree = "<group>"; };
 		CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTChangeCityViewController.xib; sourceTree = "<group>"; };
-		CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiTuanHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC494DE1CB951BF0067F178 /* MTDropDownViewMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewMasterCell.h; sourceTree = "<group>"; };
+		CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDropDownViewMasterCell.m; sourceTree = "<group>"; };
+		CBC494E11CB9530C0067F178 /* MTDropDownViewDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewDetailCell.h; sourceTree = "<group>"; };
+		CBC494E21CB9530C0067F178 /* MTDropDownViewDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDropDownViewDetailCell.m; sourceTree = "<group>"; };
+		CBCFD6D71CA9662D009990C6 /* MTHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6E61CA9662D009990C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBCFD6EB1CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBCFD6F01CA9662D009990C6 /* MeiTuanHDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiTuanHDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBCFD6F01CA9662D009990C6 /* MTHD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTHD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDTests.m; sourceTree = "<group>"; };
 		CBCFD6F61CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBCFD6FB1CA9662D009990C6 /* MeiTuanHDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiTuanHDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBCFD6FB1CA9662D009990C6 /* MTHD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTHD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDUITests.m; sourceTree = "<group>"; };
 		CBCFD7011CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -226,6 +232,10 @@
 				CB8091671CA9B25200B2460B /* MTDropDownView.h */,
 				CB8091681CA9B25200B2460B /* MTDropDownView.m */,
 				CB80916A1CA9B26600B2460B /* MTDropDownView.xib */,
+				CBC494DE1CB951BF0067F178 /* MTDropDownViewMasterCell.h */,
+				CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */,
+				CBC494E11CB9530C0067F178 /* MTDropDownViewDetailCell.h */,
+				CBC494E21CB9530C0067F178 /* MTDropDownViewDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,9 +314,9 @@
 		CBCFD6D81CA9662D009990C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */,
-				CBCFD6F01CA9662D009990C6 /* MeiTuanHDTests.xctest */,
-				CBCFD6FB1CA9662D009990C6 /* MeiTuanHDUITests.xctest */,
+				CBCFD6D71CA9662D009990C6 /* MTHD.app */,
+				CBCFD6F01CA9662D009990C6 /* MTHD.xctest */,
+				CBCFD6FB1CA9662D009990C6 /* MTHD.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,9 +361,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CBCFD6D61CA9662D009990C6 /* MeiTuanHD */ = {
+		CBCFD6D61CA9662D009990C6 /* MTHD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBCFD7041CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHD" */;
+			buildConfigurationList = CBCFD7041CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHD" */;
 			buildPhases = (
 				C3F22A3B78CA37389F641DBC /* Check Pods Manifest.lock */,
 				CBCFD6D31CA9662D009990C6 /* Sources */,
@@ -366,14 +376,14 @@
 			);
 			dependencies = (
 			);
-			name = MeiTuanHD;
+			name = MTHD;
 			productName = MeiTuanHD;
-			productReference = CBCFD6D71CA9662D009990C6 /* MeiTuanHD.app */;
+			productReference = CBCFD6D71CA9662D009990C6 /* MTHD.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CBCFD6EF1CA9662D009990C6 /* MeiTuanHDTests */ = {
+		CBCFD6EF1CA9662D009990C6 /* MTHDTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBCFD7071CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDTests" */;
+			buildConfigurationList = CBCFD7071CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHDTests" */;
 			buildPhases = (
 				CBCFD6EC1CA9662D009990C6 /* Sources */,
 				CBCFD6ED1CA9662D009990C6 /* Frameworks */,
@@ -384,14 +394,14 @@
 			dependencies = (
 				CBCFD6F21CA9662D009990C6 /* PBXTargetDependency */,
 			);
-			name = MeiTuanHDTests;
+			name = MTHDTests;
 			productName = MeiTuanHDTests;
-			productReference = CBCFD6F01CA9662D009990C6 /* MeiTuanHDTests.xctest */;
+			productReference = CBCFD6F01CA9662D009990C6 /* MTHD.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CBCFD6FA1CA9662D009990C6 /* MeiTuanHDUITests */ = {
+		CBCFD6FA1CA9662D009990C6 /* MTHDUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBCFD70A1CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDUITests" */;
+			buildConfigurationList = CBCFD70A1CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHDUITests" */;
 			buildPhases = (
 				CBCFD6F71CA9662D009990C6 /* Sources */,
 				CBCFD6F81CA9662D009990C6 /* Frameworks */,
@@ -402,9 +412,9 @@
 			dependencies = (
 				CBCFD6FD1CA9662D009990C6 /* PBXTargetDependency */,
 			);
-			name = MeiTuanHDUITests;
+			name = MTHDUITests;
 			productName = MeiTuanHDUITests;
-			productReference = CBCFD6FB1CA9662D009990C6 /* MeiTuanHDUITests.xctest */;
+			productReference = CBCFD6FB1CA9662D009990C6 /* MTHD.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +440,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CBCFD6D21CA9662D009990C6 /* Build configuration list for PBXProject "MeiTuanHD" */;
+			buildConfigurationList = CBCFD6D21CA9662D009990C6 /* Build configuration list for PBXProject "MTHD" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -443,9 +453,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBCFD6D61CA9662D009990C6 /* MeiTuanHD */,
-				CBCFD6EF1CA9662D009990C6 /* MeiTuanHDTests */,
-				CBCFD6FA1CA9662D009990C6 /* MeiTuanHDUITests */,
+				CBCFD6D61CA9662D009990C6 /* MTHD */,
+				CBCFD6EF1CA9662D009990C6 /* MTHDTests */,
+				CBCFD6FA1CA9662D009990C6 /* MTHDUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -544,6 +554,7 @@
 				CB80916E1CA9B4FD00B2460B /* MTCatogeryViewController.m in Sources */,
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
+				CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
 				CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */,
@@ -552,6 +563,7 @@
 				CBF0DA931CAC290E00362004 /* MTSortViewController.m in Sources */,
 				CBF0DA991CAC42EF00362004 /* MTCity.m in Sources */,
 				CB8091601CA9830B00B2460B /* const.m in Sources */,
+				CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */,
 				CB91FD121CABA40700B9E74C /* MTCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,12 +589,12 @@
 /* Begin PBXTargetDependency section */
 		CBCFD6F21CA9662D009990C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CBCFD6D61CA9662D009990C6 /* MeiTuanHD */;
+			target = CBCFD6D61CA9662D009990C6 /* MTHD */;
 			targetProxy = CBCFD6F11CA9662D009990C6 /* PBXContainerItemProxy */;
 		};
 		CBCFD6FD1CA9662D009990C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CBCFD6D61CA9662D009990C6 /* MeiTuanHD */;
+			target = CBCFD6D61CA9662D009990C6 /* MTHD */;
 			targetProxy = CBCFD6FC1CA9662D009990C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -683,7 +695,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MTHD;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -701,7 +713,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MTHD;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -713,8 +725,8 @@
 				INFOPLIST_FILE = MeiTuanHDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHDTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeiTuanHD.app/MeiTuanHD";
+				PRODUCT_NAME = MTHD;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTHD.app/MTHD";
 			};
 			name = Debug;
 		};
@@ -725,8 +737,8 @@
 				INFOPLIST_FILE = MeiTuanHDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHDTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeiTuanHD.app/MeiTuanHD";
+				PRODUCT_NAME = MTHD;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTHD.app/MTHD";
 			};
 			name = Release;
 		};
@@ -736,7 +748,7 @@
 				INFOPLIST_FILE = MeiTuanHDUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHDUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MTHD;
 				TEST_TARGET_NAME = MeiTuanHD;
 				USES_XCTRUNNER = YES;
 			};
@@ -748,7 +760,7 @@
 				INFOPLIST_FILE = MeiTuanHDUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHDUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MTHD;
 				TEST_TARGET_NAME = MeiTuanHD;
 				USES_XCTRUNNER = YES;
 			};
@@ -757,7 +769,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CBCFD6D21CA9662D009990C6 /* Build configuration list for PBXProject "MeiTuanHD" */ = {
+		CBCFD6D21CA9662D009990C6 /* Build configuration list for PBXProject "MTHD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBCFD7021CA9662D009990C6 /* Debug */,
@@ -766,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBCFD7041CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHD" */ = {
+		CBCFD7041CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBCFD7051CA9662D009990C6 /* Debug */,
@@ -775,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBCFD7071CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDTests" */ = {
+		CBCFD7071CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHDTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBCFD7081CA9662D009990C6 /* Debug */,
@@ -784,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBCFD70A1CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MeiTuanHDUITests" */ = {
+		CBCFD70A1CA9662D009990C6 /* Build configuration list for PBXNativeTarget "MTHDUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBCFD70B1CA9662D009990C6 /* Debug */,

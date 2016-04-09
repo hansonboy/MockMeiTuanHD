@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MeiTuanHD.xcodeproj">
+      location = "group:/Users/JW/Github/&#x9ed1;&#x9a6c;&#x6559;&#x7a0b;/MeiTuanHD/MTHD.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -31,4 +31,12 @@
 -(void)addTarget:(id)target action:(SEL)action{
     [self.btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
+-(void)setTitle:(NSString *)title
+{
+    self.topLabel.text = title;
+}
+-(void)setDetailTitle:(NSString *)detailTitle
+{
+    self.bottomLabel.text = detailTitle;
+}
 @end

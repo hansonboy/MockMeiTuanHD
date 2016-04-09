@@ -13,5 +13,6 @@
 +(instancetype)itemWithTopTitle:(NSString *)topTitle bottomTitle:(NSString *)bottomTitle image:(NSString *)image highlightedImage:(NSString *)hlImage;
 
 -(void)addTarget:(id)target action:(SEL)action;
-
+-(void)setTitle:(NSString*)title;
+-(void)setDetailTitle:(NSString *)detailTitle;
 @end

@@ -9,6 +9,8 @@
 #import "MTDropDownView.h"
 #import "MJExtension.h"
 #import "MTCategory.h"
+#import "MTDropDownViewMasterCell.h"
+#import "MTDropDownViewDetailCell.h"
 @interface MTDropDownView()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *masterTBV;
@@ -17,7 +19,7 @@
 
 @end
 @implementation MTDropDownView
-#pragma mark 测试下什么时候会调用awakeFromNib：自定义view时候，会吸纳调用initWithCoder:，然后是awakeFromNib 方法
+#pragma mark 测试下什么时候会调用awakeFromNib：自定义view时候，会先调用initWithCoder:，然后是awakeFromNib 方法
 -(void)awakeFromNib{
     [super awakeFromNib];
     JWLog(@"");
@@ -64,15 +66,8 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell ;
+    UITableViewCell *cell  = [MTDropDownViewMasterCell dropDownViewMasterCellWithTableView:tableView];
     if (tableView == self.masterTBV) {
-        static NSString *identifier =@"cell";
-        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_leftpart"]];
-            cell.selectedBackgroundView = [[UIImageView alloc ]initWithImage:[UIImage imageNamed:@"bg_dropdown_left_selected"]];
-        }
         MTCategory * category = [self.categories objectAtIndex:indexPath.row];
         cell.textLabel.text = category.name;
         cell.imageView.image = [UIImage imageNamed:category.small_icon];
@@ -81,15 +76,9 @@
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
-
     }else{
-        static NSString *identifier =@"detail_cell";
-        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_dropdown_rightpart"]];
-            cell.selectedBackgroundView = [[UIImageView alloc ]initWithImage:[UIImage imageNamed:@"bg_dropdown_right_selected"]];
-        }
+        cell = [MTDropDownViewDetailCell dropDownViewDetailCellWithTableView:tableView];
+        
         NSArray *dataSourceD = self.selectedCategory.subcategories;
         cell.textLabel.text = [dataSourceD objectAtIndex:indexPath.row];
     }

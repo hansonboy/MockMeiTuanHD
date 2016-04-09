@@ -22,7 +22,7 @@
     [self presentViewController:navi animated:YES completion:nil];
 }
 
-//#pragma mark 测试下生命周期
+#pragma mark 测试下生命周期
 //-(instancetype)init{
 //    if (self == [super init]) {
 //        JWLog(@"");

@@ -33,7 +33,7 @@
 #pragma mark -初始化
 -(instancetype)init{
     if (self = [super initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]]) {
-        self.collectionView.backgroundColor = [UIColor redColor];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
     }
     return  self;
 }

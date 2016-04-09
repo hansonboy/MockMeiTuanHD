@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CBCFD6D61CA9662D009990C6"
-               BuildableName = "MeiTuanHD.app"
-               BlueprintName = "MeiTuanHD"
-               ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+               BuildableName = "MTHD.app"
+               BlueprintName = "MTHD"
+               ReferencedContainer = "container:MTHD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CBCFD6EF1CA9662D009990C6"
-               BuildableName = "MeiTuanHDTests.xctest"
-               BlueprintName = "MeiTuanHDTests"
-               ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+               BuildableName = "MTHD.xctest"
+               BlueprintName = "MTHDTests"
+               ReferencedContainer = "container:MTHD.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CBCFD6FA1CA9662D009990C6"
-               BuildableName = "MeiTuanHDUITests.xctest"
-               BlueprintName = "MeiTuanHDUITests"
-               ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+               BuildableName = "MTHD.xctest"
+               BlueprintName = "MTHDUITests"
+               ReferencedContainer = "container:MTHD.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBCFD6D61CA9662D009990C6"
-            BuildableName = "MeiTuanHD.app"
-            BlueprintName = "MeiTuanHD"
-            ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+            BuildableName = "MTHD.app"
+            BlueprintName = "MTHD"
+            ReferencedContainer = "container:MTHD.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBCFD6D61CA9662D009990C6"
-            BuildableName = "MeiTuanHD.app"
-            BlueprintName = "MeiTuanHD"
-            ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+            BuildableName = "MTHD.app"
+            BlueprintName = "MTHD"
+            ReferencedContainer = "container:MTHD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBCFD6D61CA9662D009990C6"
-            BuildableName = "MeiTuanHD.app"
-            BlueprintName = "MeiTuanHD"
-            ReferencedContainer = "container:MeiTuanHD.xcodeproj">
+            BuildableName = "MTHD.app"
+            BlueprintName = "MTHD"
+            ReferencedContainer = "container:MTHD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
