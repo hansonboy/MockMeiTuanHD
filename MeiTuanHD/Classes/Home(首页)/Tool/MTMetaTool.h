@@ -17,5 +17,7 @@
 +(NSArray *)cities;
 +(MTCity *)cityByIndex:(NSInteger)index;
 /** 返回的是包含搜索字符串的选中下标集合*/
-+(NSArray*)citiesWithSearchText:(NSString *)searchText;
++(NSArray *)citiesWithSearchText:(NSString *)searchText;
+/** 返回的是sort.plist中的MTSort对象*/
++(NSArray *)sorts;
 @end

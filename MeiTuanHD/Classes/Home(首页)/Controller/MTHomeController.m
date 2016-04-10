@@ -11,13 +11,14 @@
 #import "MTHomeTopItem.h"
 #import "UIView+Extension.h"
 #import "MTCatogeryViewController.h"
-#import "MTRegionViewController.h"
 #import "MTSortViewController.h"
+#import "MTRegionViewController.h"
 #import "MTNavigationController.h"
 #import "MTCategory.h"
 #import "MTMetaTool.h"
 #import "MTRegion.h"
 #import "MTCity.h"
+#import "MTSort.h"
 #import "MTChangeCityViewController.h"
 @interface MTHomeController()
 /**
@@ -61,9 +62,10 @@
 -(void)setupLeftBarBtnItem{
     //1.logo
     UIBarButtonItem *logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
-    
+    //TODO: 初始化TopItem添加
     //2.类别
     MTHomeTopItem * category = [[MTHomeTopItem alloc]init];
+    [category setTitle:@"美团"];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
     [category addTarget:self action:@selector(changeCategory)];
     self.categoryItem = categoryItem;
@@ -102,6 +104,8 @@
     [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTRegionDidChangedNotification object:nil];
     
     [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTCityDidChangedNotification object:nil];
+    
+    [KNotificationCenter addObserver:self selector:@selector(updateSortItem:) name:kMTSortViewControllerDidNewSortNotification object:nil];
 }
 
 -(void)updateCategoryItem:(NSNotification *)notification
@@ -111,7 +115,7 @@
     NSInteger masterIndex = [notification.userInfo[kMTCategoryCategoryIndexUserInfoKey] integerValue];
     MTCategory *category = [MTMetaTool categoryByIndex:masterIndex];
     NSInteger index = [notification.userInfo[kMTCategorySubcategoiesIndexUserInfoKey] integerValue];
-    [item setTitle:@"美团"];
+    
     [item setImage:category.small_icon highImage:category.small_highlighted_icon];
     NSString *detailTitle = index == 0?category.name:category.subcategories[index];
     [item setDetailTitle:detailTitle];
@@ -146,12 +150,21 @@
     
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
 }
+-(void)updateSortItem:(NSNotification *)noti
+{
+    NSInteger index = [noti.userInfo[kMTSortNumberUserInfoKey] integerValue];
+    MTHomeTopItem *item = (MTHomeTopItem *)self.sortItem.customView;
+    MTSort *sort = [[MTMetaTool sorts]objectAtIndex:index];
+    [item setDetailTitle:sort.label];
+    [item setTitle:@"排序"];
+    
+}
 -(void)dealloc
 {
     [KNotificationCenter removeObserver:self name:kMTCategoryDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTRegionDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
-    
+    [KNotificationCenter removeObserver:self name:kMTSortViewControllerDidNewSortNotification object:nil];
 }
 #pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
@@ -164,9 +177,9 @@
 
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
-//    MTSortViewController *sortVC =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MTSortViewController"];
-//    sortVC.modalPresentationStyle = UIModalPresentationFormSheet;
-//    [self presentViewController:sortVC animated:YES completion:nil];
+    MTSortViewController *sortVC = [[MTSortViewController alloc]init];;
+    UIPopoverController *popoverVC = [[UIPopoverController alloc]initWithContentViewController:sortVC];
+    [popoverVC presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     //TODO: 处理sort分类
 }
 -(void)changeCategory{

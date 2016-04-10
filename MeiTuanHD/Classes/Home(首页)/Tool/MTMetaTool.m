@@ -13,11 +13,13 @@
 #import "MTRegion.h"
 #import "MTCategory.h"
 #import "MJExtension.h"
+#import "MTSort.h"
 
 @interface MTMetaTool()<NSCopying,NSMutableCopying>
 @property (strong,nonatomic) NSArray *citiGroups;
 @property (strong,nonatomic) NSArray *categories;
 @property (nonatomic ,strong)NSArray *cities;
+@property (nonatomic ,strong)NSArray *sorts;
 @end
 static MTMetaTool *tool = nil;
 @implementation MTMetaTool
@@ -91,5 +93,12 @@ static MTMetaTool *tool = nil;
 {
     
     return [[self cities]objectAtIndex:index];
+}
++(NSArray *)sorts
+{
+    if (tool.sorts == nil) {
+        tool.sorts = [MTSort mj_objectArrayWithFilename:@"sorts.plist"];
+    }
+    return tool.sorts;
 }
 @end

@@ -32,13 +32,13 @@
 		CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD1D1CABCE5800B9E74C /* MTRegionViewController.xib */; };
 		CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */; };
 		CB91FD231CABE4D500B9E74C /* MTChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */; };
+		CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */; };
+		CBAC4EEF1CBABE3700BDCA1B /* MTSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */; };
 		CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */; };
 		CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494E21CB9530C0067F178 /* MTDropDownViewDetailCell.m */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
-		CBF0DA901CAC284400362004 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */; };
-		CBF0DA931CAC290E00362004 /* MTSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA921CAC290E00362004 /* MTSortViewController.m */; };
 		CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA951CAC41EE00362004 /* MTCityGroup.m */; };
 		CBF0DA991CAC42EF00362004 /* MTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA981CAC42EF00362004 /* MTCity.m */; };
 /* End PBXBuildFile section */
@@ -103,6 +103,10 @@
 		CB91FD1F1CABE4D500B9E74C /* MTChangeCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTChangeCityViewController.h; sourceTree = "<group>"; };
 		CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTChangeCityViewController.m; sourceTree = "<group>"; };
 		CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTChangeCityViewController.xib; sourceTree = "<group>"; };
+		CBAC4EEA1CBABD4400BDCA1B /* MTSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSort.h; sourceTree = "<group>"; };
+		CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSort.m; sourceTree = "<group>"; };
+		CBAC4EED1CBABE3700BDCA1B /* MTSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSortViewController.h; sourceTree = "<group>"; };
+		CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSortViewController.m; sourceTree = "<group>"; };
 		CBC494DE1CB951BF0067F178 /* MTDropDownViewMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewMasterCell.h; sourceTree = "<group>"; };
 		CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDropDownViewMasterCell.m; sourceTree = "<group>"; };
 		CBC494E11CB9530C0067F178 /* MTDropDownViewDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewDetailCell.h; sourceTree = "<group>"; };
@@ -116,9 +120,6 @@
 		CBCFD6FB1CA9662D009990C6 /* MTHD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTHD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDUITests.m; sourceTree = "<group>"; };
 		CBCFD7011CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		CBF0DA911CAC290E00362004 /* MTSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSortViewController.h; sourceTree = "<group>"; };
-		CBF0DA921CAC290E00362004 /* MTSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSortViewController.m; sourceTree = "<group>"; };
 		CBF0DA941CAC41EE00362004 /* MTCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCityGroup.h; sourceTree = "<group>"; };
 		CBF0DA951CAC41EE00362004 /* MTCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCityGroup.m; sourceTree = "<group>"; };
 		CBF0DA971CAC42EF00362004 /* MTCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCity.h; sourceTree = "<group>"; };
@@ -222,11 +223,10 @@
 				CB91FD1F1CABE4D500B9E74C /* MTChangeCityViewController.h */,
 				CB91FD201CABE4D500B9E74C /* MTChangeCityViewController.m */,
 				CB91FD211CABE4D500B9E74C /* MTChangeCityViewController.xib */,
-				CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */,
-				CBF0DA911CAC290E00362004 /* MTSortViewController.h */,
-				CBF0DA921CAC290E00362004 /* MTSortViewController.m */,
 				CB0E42231CBA6FCE00F5B86C /* MTSearchResultTVC.h */,
 				CB0E42241CBA6FCE00F5B86C /* MTSearchResultTVC.m */,
+				CBAC4EED1CBABE3700BDCA1B /* MTSortViewController.h */,
+				CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +242,8 @@
 				CBF0DA981CAC42EF00362004 /* MTCity.m */,
 				CB72974E1CBA276F000CECCA /* MTRegion.h */,
 				CB72974F1CBA276F000CECCA /* MTRegion.m */,
+				CBAC4EEA1CBABD4400BDCA1B /* MTSort.h */,
+				CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,7 +499,6 @@
 				CB80916B1CA9B26600B2460B /* MTDropDownView.xib in Resources */,
 				CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */,
 				CB8090AA1CA9723500B2460B /* cityGroups.plist in Resources */,
-				CBF0DA901CAC284400362004 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,18 +580,19 @@
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
 				CB0E42251CBA6FCE00F5B86C /* MTSearchResultTVC.m in Sources */,
+				CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */,
 				CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
 				CB91FD221CABE4D500B9E74C /* MTChangeCityViewController.m in Sources */,
 				CB80915C1CA9801100B2460B /* UIBarButtonItem+Extension.m in Sources */,
 				CB8091661CA98EF500B2460B /* MTHomeTopItem.m in Sources */,
-				CBF0DA931CAC290E00362004 /* MTSortViewController.m in Sources */,
 				CBF0DA991CAC42EF00362004 /* MTCity.m in Sources */,
 				CB8091601CA9830B00B2460B /* const.m in Sources */,
 				CB7297501CBA276F000CECCA /* MTRegion.m in Sources */,
 				CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */,
 				CB91FD121CABA40700B9E74C /* MTCategory.m in Sources */,
+				CBAC4EEF1CBABE3700BDCA1B /* MTSortViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
