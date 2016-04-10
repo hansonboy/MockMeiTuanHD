@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+extern NSString *const kMTCityDidChangedNotification;
+extern NSString *const kMTCityIndexUserInfoKey;
 @interface MTChangeCityViewController : UIViewController
 
 @end

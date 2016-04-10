@@ -15,4 +15,5 @@
 -(void)addTarget:(id)target action:(SEL)action;
 -(void)setTitle:(NSString*)title;
 -(void)setDetailTitle:(NSString *)detailTitle;
+-(void)setImage:(NSString *)image highImage:(NSString *)highImg;
 @end

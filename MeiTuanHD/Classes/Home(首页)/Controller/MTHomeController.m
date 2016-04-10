@@ -14,6 +14,11 @@
 #import "MTRegionViewController.h"
 #import "MTSortViewController.h"
 #import "MTNavigationController.h"
+#import "MTCategory.h"
+#import "MTMetaTool.h"
+#import "MTRegion.h"
+#import "MTCity.h"
+#import "MTChangeCityViewController.h"
 @interface MTHomeController()
 /**
  *  分类
@@ -28,6 +33,13 @@
  */
 @property (weak,nonatomic) UIBarButtonItem *sortItem;
 
+/**为了再次打开区域下拉菜单时候的时候默认选中相应的区域*/
+/** 当前选中的城市*/
+@property (nonatomic ,assign)NSInteger selectedCityIndex;
+/** 当前选中的区域*/
+@property (nonatomic ,assign)NSInteger selectedRegionIndex;
+/** 当前选中的子区域*/
+@property (nonatomic ,assign)NSInteger selectedSubregionIndex;
 @end
 @implementation MTHomeController
 #pragma mark -初始化
@@ -43,7 +55,9 @@
     //设置导航栏内容
     [self setupRightBarBtnItem];
     [self setupLeftBarBtnItem];
+    [self addNotification];
 }
+
 -(void)setupLeftBarBtnItem{
     //1.logo
     UIBarButtonItem *logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
@@ -80,6 +94,65 @@
     
     self.navigationItem.rightBarButtonItems = @[mapItem,searchItem];
 }
+#pragma mark - add NSNotification
+-(void)addNotification
+{
+    [KNotificationCenter addObserver:self selector:@selector(updateCategoryItem:) name:kMTCategoryDidChangedNotification object:nil];
+    
+    [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTRegionDidChangedNotification object:nil];
+    
+    [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTCityDidChangedNotification object:nil];
+}
+
+-(void)updateCategoryItem:(NSNotification *)notification
+{
+    
+    MTHomeTopItem *item = (MTHomeTopItem *)self.categoryItem.customView;
+    NSInteger masterIndex = [notification.userInfo[kMTCategoryCategoryIndexUserInfoKey] integerValue];
+    MTCategory *category = [MTMetaTool categoryByIndex:masterIndex];
+    NSInteger index = [notification.userInfo[kMTCategorySubcategoiesIndexUserInfoKey] integerValue];
+    [item setTitle:@"美团"];
+    [item setImage:category.small_icon highImage:category.small_highlighted_icon];
+    NSString *detailTitle = index == 0?category.name:category.subcategories[index];
+    [item setDetailTitle:detailTitle];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)updateRegionItem:(NSNotification *)notification
+{
+    
+    MTHomeTopItem *item = (MTHomeTopItem *)self.cityItem.customView;
+    NSInteger cityIndex = 0;
+    NSInteger regionIndex = 0;
+    NSInteger subRegionIndex = 0;
+    if (notification.name == kMTCityDidChangedNotification) {
+        cityIndex = [notification.userInfo[kMTCityIndexUserInfoKey] integerValue];
+    }
+    else
+    {
+        cityIndex = [notification.userInfo[kMTRegionSelectedCityIndexUserInfoKey] integerValue];
+        regionIndex = [notification.userInfo[kMTRegionSelectedRegionIndexUserInfoKey] integerValue];
+        subRegionIndex = [notification.userInfo[kMTRegionSelectedSubRegionIndexUserInfoKey] integerValue];
+    }
+    MTCity *city = [MTMetaTool cityByIndex:cityIndex];
+    MTRegion *region = [city.regions objectAtIndex:regionIndex];
+    
+    NSString *title = [NSString stringWithFormat:@"%@-%@",city.name,region.name];
+    [item setTitle:title];
+    NSString *detailTitle = subRegionIndex == 0?region.name:[region.subregions objectAtIndex:subRegionIndex];
+    [item setDetailTitle:detailTitle];
+    self.selectedCityIndex = cityIndex;
+    self.selectedRegionIndex = regionIndex;
+    self.selectedSubregionIndex = subRegionIndex;
+    
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)dealloc
+{
+    [KNotificationCenter removeObserver:self name:kMTCategoryDidChangedNotification object:nil];
+    [KNotificationCenter removeObserver:self name:kMTRegionDidChangedNotification object:nil];
+    [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
+    
+}
 #pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
     JWLog(@"");
@@ -91,9 +164,10 @@
 
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
-    MTSortViewController *sortVC =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MTSortViewController"];
-    sortVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:sortVC animated:YES completion:nil];
+//    MTSortViewController *sortVC =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MTSortViewController"];
+//    sortVC.modalPresentationStyle = UIModalPresentationFormSheet;
+//    [self presentViewController:sortVC animated:YES completion:nil];
+    //TODO: 处理sort分类
 }
 -(void)changeCategory{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
@@ -106,7 +180,11 @@
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     JWLog(@"");
     MTRegionViewController *changeCityVC = [[MTRegionViewController alloc]init];
+    changeCityVC.selectedCityIndex = self.selectedCityIndex;
+    changeCityVC.selectedRegionIndex = self.selectedRegionIndex;
+    changeCityVC.selectedSubregionIndex = self.selectedSubregionIndex;
     UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:changeCityVC];
     [popoverController presentPopoverFromBarButtonItem:self.cityItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
+
 @end

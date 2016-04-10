@@ -11,7 +11,7 @@
 @interface MTCityGroup : NSObject
 /**分组名称*/
 @property (nonatomic ,copy) NSString *title;
-/**包含的城市数组*/
+/**包含的城市数组，数组内部包含的类型是NSString*/
 @property (strong,nonatomic) NSArray *cities;
 
 @end

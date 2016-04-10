@@ -17,4 +17,5 @@
 #define JWLog(xx, ...)
 #endif
 #include "const.h"
+#define  KNotificationCenter [NSNotificationCenter defaultCenter]
 #endif /* const_pch */

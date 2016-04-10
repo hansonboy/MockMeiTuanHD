@@ -10,9 +10,13 @@
 #import "MTDropDownView.h"
 #import "MTCategory.h"
 #import "MTMetaTool.h"
-@interface MTCatogeryViewController ()<MTDropDownViewDataSource>
+@interface MTCatogeryViewController ()<MTDropDownViewDataSource,MTDropDownViewDelegate>
 
 @end
+
+NSString *const kMTCategoryDidChangedNotification = @"kNSCategoryDidChangedNotification";
+NSString *const kMTCategoryCategoryIndexUserInfoKey = @"kMTCategoryCategoryIndexUserInfoKey";
+NSString *const kMTCategorySubcategoiesIndexUserInfoKey = @"kMTCategorySubcategoiesIndexUserInfoKey";
 
 @implementation MTCatogeryViewController
 //因为MTCatogeryViewController.view 只有一个DropDownView ，所以可以将self.view 和MTDropDownView 进行合并，一个控制器的view的加载过程是先调用loadView 为self.view 赋值，如果没有重写该方法，那么会找是否存在和控制器同名的xib，或者是storyBoard来进行初始化，如果都没有，那会初始化一个空白的view 赋值给self.view
@@ -21,6 +25,7 @@
      MTDropDownView *dropView = [MTDropDownView dropDownView];
     self.view = dropView;
     dropView.dataSource = self;
+    dropView.delegate = self;
     self.preferredContentSize = dropView.frame.size;
 }
 - (void)viewDidLoad {
@@ -63,5 +68,20 @@
     }else
         return UITableViewCellAccessoryDisclosureIndicator;
 }
+#pragma mark - dropDownView delegate
+-(void)dropDownView:(MTDropDownView *)dropDownView didSelectRowAtMasterTable:(NSInteger)masterRow detailTableAtRow:(NSInteger)detailRow
+{
 
+     MTCategory *category = [MTMetaTool categoryByIndex:masterRow];
+    if (detailRow == -1) {//处理主表选定
+       
+        if (category.subcategories.count == 0) {
+            [KNotificationCenter postNotificationName:kMTCategoryDidChangedNotification object:self userInfo:@{kMTCategoryCategoryIndexUserInfoKey:@(masterRow),kMTCategorySubcategoiesIndexUserInfoKey:@(0)}];
+        }
+    }
+    else
+    {
+        [KNotificationCenter postNotificationName:kMTCategoryDidChangedNotification object:self userInfo:@{kMTCategoryCategoryIndexUserInfoKey:@(masterRow),kMTCategorySubcategoiesIndexUserInfoKey:@(detailRow)}];;
+    }
+}
 @end

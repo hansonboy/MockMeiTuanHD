@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+extern NSString *const kMTCategoryDidChangedNotification;
+extern NSString *const kMTCategoryCategoryIndexUserInfoKey;
+extern NSString *const kMTCategorySubcategoiesIndexUserInfoKey;
 @interface MTCatogeryViewController : UIViewController
 
 @end

@@ -14,7 +14,10 @@
 #import "Masonry.h"
 #import "MTMetaTool.h"
 #import "MTSearchResultTVC.h"
+NSString *const kMTCityDidChangedNotification = @"kCityDidChangedNotification";
+NSString *const kMTCityIndexUserInfoKey = @"kCityIndexUserInfoKey";
 @interface MTChangeCityViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic ,weak)MTSearchResultTVC *resultTVC;
@@ -22,10 +25,8 @@
 @end
 
 @implementation MTChangeCityViewController
+
 const int coverTag = 1000;
-#pragma mark - 懒加载
-
-
 #pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +49,7 @@ const int coverTag = 1000;
     MTSearchResultTVC *tvc = [[MTSearchResultTVC alloc]init];
     [self addChildViewController:tvc];
     self.resultTVC = tvc;
-    [self.view addSubview:self.resultTVC.view];
+    [self.view insertSubview:self.resultTVC.view atIndex:0];
     [self.resultTVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
@@ -86,6 +87,17 @@ const int coverTag = 1000;
 //索引
 -(NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
     return    [ [MTMetaTool cityGroups] valueForKeyPath:@"title"];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MTCityGroup *group =  [[MTMetaTool cityGroups] objectAtIndex:indexPath.section];
+    NSString *city = [group.cities objectAtIndex:indexPath.row];
+    NSInteger cityIndex = [[[MTMetaTool citiesWithSearchText:city] lastObject] integerValue];
+    [KNotificationCenter postNotificationName:kMTCityDidChangedNotification object:self userInfo:@{kMTCityIndexUserInfoKey:@(cityIndex)}];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 #pragma mark - searchBar delegate
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
@@ -128,6 +140,11 @@ const int coverTag = 1000;
     if (searchText.length == 0) {
         self.resultTVC.view.alpha = 0;
     }
+    
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 @end

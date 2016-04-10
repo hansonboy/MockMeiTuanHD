@@ -11,6 +11,7 @@
 #import "MTSearchResultTVC.h"
 #import "MTMetaTool.h"
 #import "MTCity.h"
+#import "MTChangeCityViewController.h"
 @interface MTSearchResultTVC ()
 
 @end
@@ -48,6 +49,15 @@
     MTCity *city = [MTMetaTool cities][index];
     cell.textLabel.text = city.name;
     return cell;
+}
+
+#pragma mark - tableview delegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO: 需要返回点击事件
+    NSInteger index = [self.result[indexPath.row] integerValue];
+    [KNotificationCenter postNotificationName:kMTCityDidChangedNotification object:self userInfo:@{kMTCityIndexUserInfoKey:@(index)}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

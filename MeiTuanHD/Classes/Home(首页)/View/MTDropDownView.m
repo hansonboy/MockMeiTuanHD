@@ -7,8 +7,6 @@
 //
 
 #import "MTDropDownView.h"
-#import "MJExtension.h"
-#import "MTCategory.h"
 #import "MTDropDownViewMasterCell.h"
 #import "MTDropDownViewDetailCell.h"
 @interface MTDropDownView()<UITableViewDataSource,UITableViewDelegate>
@@ -47,7 +45,12 @@
     dropDown.autoresizingMask = UIViewAutoresizingNone;
     return dropDown;
 }
-
+//强制刷新
+-(void)setDataSource:(id<MTDropDownViewDataSource>)dataSource{
+    _dataSource = dataSource;
+    [self.masterTBV reloadData];
+    [self.detailTBV reloadData];
+}
 #pragma mark - UITableView data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.masterTBV) {
@@ -86,6 +89,17 @@
     if (tableView == self.masterTBV) {
         self.selectedRowInMasterCell = indexPath.row;
         [self.detailTBV reloadData];
+        if([self.delegate respondsToSelector:@selector(dropDownView:didSelectRowAtMasterTable:detailTableAtRow:)])
+        {
+            [self.delegate dropDownView:self didSelectRowAtMasterTable:indexPath.row detailTableAtRow:-1];
+        }
+    }
+    else
+    {
+        if([self.delegate respondsToSelector:@selector(dropDownView:didSelectRowAtMasterTable:detailTableAtRow:)])
+        {
+            [self.delegate dropDownView:self didSelectRowAtMasterTable:self.selectedRowInMasterCell detailTableAtRow:indexPath.row];
+        }
     }
 }
 @end

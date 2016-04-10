@@ -13,12 +13,13 @@
 #import "MTRegion.h"
 #import "MTCategory.h"
 #import "MJExtension.h"
-static MTMetaTool *tool = nil;
+
 @interface MTMetaTool()<NSCopying,NSMutableCopying>
 @property (strong,nonatomic) NSArray *citiGroups;
 @property (strong,nonatomic) NSArray *categories;
 @property (nonatomic ,strong)NSArray *cities;
 @end
+static MTMetaTool *tool = nil;
 @implementation MTMetaTool
 +(void)initialize
 {
@@ -80,5 +81,15 @@ static MTMetaTool *tool = nil;
         }
     }
     return  result;
+}
++(MTCategory *)categoryByIndex:(NSInteger)index
+{
+    MTCategory *category = [[self categories]objectAtIndex:index];
+    return category;
+}
++(MTCity *)cityByIndex:(NSInteger)index
+{
+    
+    return [[self cities]objectAtIndex:index];
 }
 @end

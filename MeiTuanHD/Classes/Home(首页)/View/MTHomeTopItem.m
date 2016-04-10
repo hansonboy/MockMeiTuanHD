@@ -39,4 +39,9 @@
 {
     self.bottomLabel.text = detailTitle;
 }
+-(void)setImage:(NSString *)image highImage:(NSString *)highImg
+{
+    [self.btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    [self.btn setImage:[UIImage imageNamed:highImg] forState:UIControlStateHighlighted];
+}
 @end

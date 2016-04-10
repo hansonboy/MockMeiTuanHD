@@ -15,25 +15,32 @@
 #import "MTRegion.h"
 #import "Masonry.h"
 #import "MTMetaTool.h"
-@interface MTRegionViewController ()<MTDropDownViewDataSource>
+@interface MTRegionViewController ()<MTDropDownViewDataSource,MTDropDownViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topChangeCityView;
 @property (nonatomic ,weak) MTDropDownView *dropDownView;
 
 @property (nonatomic ,strong)NSArray *regions;
 
-@end
 
+@end
+NSString *const kMTRegionDidChangedNotification = @"kMTRegionDidChangedNotification";
+NSString *const kMTRegionSelectedCityIndexUserInfoKey = @"kMTRegionSelectedCityIndexUserInfoKey";
+NSString *const kMTRegionSelectedRegionIndexUserInfoKey = @"kMTRegionSelectedRegionIndexUserInfoKey";
+NSString *const kMTRegionSelectedSubRegionIndexUserInfoKey = @"kMTRegionSelectedSubRegionIndexUserInfoKey";
 @implementation MTRegionViewController
--(NSArray *)regions
+#pragma mark - 初始化
+-(void)setSelectedCityIndex:(NSInteger)selectedCityIndex
 {
-    if(_regions == nil)
-    {
-        _regions = [[MTMetaTool cities][141] regions];
-    }
-    return _regions;
+    _selectedCityIndex = selectedCityIndex;
+    self.dropDownView.dataSource = self;
 }
 
+-(NSArray *)regions
+{
+    _regions = [MTMetaTool cityByIndex:self.selectedCityIndex].regions;
+    return _regions;
+}
 - (IBAction)changeCity {
     MTChangeCityViewController *changeCity = [[MTChangeCityViewController alloc]init];
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:changeCity];
@@ -43,7 +50,30 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self addNotificationForCityChanged];
+    [self setupDropDownView];
+}
+#pragma mark - add Notification
+-(void)addNotificationForCityChanged
+{
+     [KNotificationCenter addObserver:self selector:@selector(updateCityIndex:) name:kMTCityDidChangedNotification object:nil];
+}
+-(void)updateCityIndex:(NSNotification *)noti
+{
+    NSInteger cityIndex =  [noti.userInfo[kMTCityIndexUserInfoKey] integerValue];
+    //通过在selelctedCityIndex 设置方法中重新设置dataSource 然后强制刷新所有的tableView
+    self.selectedCityIndex = cityIndex;
+}
+-(void)dealloc
+{
+    [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
+}
+#pragma mark - setup dropDownView
+-(void)setupDropDownView
+{
     MTDropDownView *dropView = [MTDropDownView dropDownView];
+    dropView.delegate = self;
     [self.view  addSubview:dropView];
     //为dropView添加约束
     [dropView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,7 +108,7 @@
 /** 从表中行的标题*/
 -(NSString *)dropDownView:(MTDropDownView *)dropDownView titleForRowAtDetailTable:(NSInteger)row inMasterRow:(NSInteger)masterRow
 {
-     MTRegion *region = self.regions[masterRow];
+    MTRegion *region = self.regions[masterRow];
     return [region.subregions objectAtIndex:row];
 }
 
@@ -92,7 +122,22 @@
     }else
         return UITableViewCellAccessoryDisclosureIndicator;
 }
-
+#pragma mark - dropDownView delegate
+-(void)dropDownView:(MTDropDownView *)dropDownView didSelectRowAtMasterTable:(NSInteger)masterRow detailTableAtRow:(NSInteger)detailRow
+{
+  
+    MTRegion *region = [self.regions objectAtIndex:masterRow];
+    if (detailRow == -1) {//处理主表选定
+        if (region.subregions.count == 0) {
+            [KNotificationCenter postNotificationName:kMTRegionDidChangedNotification object:self userInfo:@{kMTRegionSelectedCityIndexUserInfoKey:@(self.selectedCityIndex),kMTRegionSelectedRegionIndexUserInfoKey:@(masterRow),kMTRegionSelectedSubRegionIndexUserInfoKey:@(0)}];
+        }
+    }
+    else
+    {
+        [KNotificationCenter postNotificationName:kMTRegionDidChangedNotification object:self userInfo:@{kMTRegionSelectedCityIndexUserInfoKey:@(self.selectedCityIndex),kMTRegionSelectedRegionIndexUserInfoKey:@(masterRow),kMTRegionSelectedSubRegionIndexUserInfoKey:@(detailRow)}];
+    }
+    
+}
 #pragma mark 测试下生命周期
 //-(instancetype)init{
 //    if (self == [super init]) {

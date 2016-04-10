@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class MTCategory;
+@class MTCity;
 
 @interface MTMetaTool : NSObject
 +(NSArray *)cityGroups;
 +(NSArray *)categories;
++(MTCategory *)categoryByIndex:(NSInteger)index;
 +(NSArray *)cities;
++(MTCity *)cityByIndex:(NSInteger)index;
+/** 返回的是包含搜索字符串的选中下标集合*/
 +(NSArray*)citiesWithSearchText:(NSString *)searchText;
 @end
