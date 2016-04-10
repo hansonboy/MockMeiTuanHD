@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTRegionViewController">
             <connections>
+                <outlet property="topChangeCityView" destination="qSk-tb-igH" id="Mj5-Zu-yZI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fwU-Sq-a97"/>
             </connections>
         </placeholder>
@@ -18,6 +19,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSk-tb-igH" userLabel="Container">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cell_rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="u5M-kM-Vit" userLabel="箭头">
+                            <rect key="frame" x="573" y="0.0" width="17" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="17" id="pMp-LR-Dtx"/>
+                                <constraint firstAttribute="height" constant="30" id="sov-wv-Q1C"/>
+                            </constraints>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dza-0b-blM">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                             <constraints>
@@ -33,13 +41,6 @@
                                 <action selector="changeCity" destination="-1" eventType="touchUpInside" id="zYz-hI-Ms6"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cell_rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="u5M-kM-Vit" userLabel="箭头">
-                            <rect key="frame" x="573" y="0.0" width="17" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="17" id="pMp-LR-Dtx"/>
-                                <constraint firstAttribute="height" constant="30" id="sov-wv-Q1C"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

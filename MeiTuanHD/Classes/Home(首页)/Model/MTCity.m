@@ -7,9 +7,6 @@
 //
 
 #import "MTCity.h"
-#import "MJExtension.h"
 @implementation MTCity
-+(NSDictionary *)mj_objectClassInArray{
-    return @{@"regions":@"NSString"};
-}
+
 @end
