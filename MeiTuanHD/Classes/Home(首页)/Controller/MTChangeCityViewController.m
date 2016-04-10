@@ -12,45 +12,60 @@
 #import "MJExtension.h"
 #import "MTCityGroup.h"
 #import "Masonry.h"
+#import "MTMetaTool.h"
+#import "MTSearchResultTVC.h"
 @interface MTChangeCityViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong,nonatomic) NSArray *cities;
-@property (strong,nonatomic) NSArray *citiGroups;
+@property (nonatomic ,weak)MTSearchResultTVC *resultTVC;
+
 @end
 
 @implementation MTChangeCityViewController
 const int coverTag = 1000;
 #pragma mark - 懒加载
--(NSArray *)cities{
-    if (_cities == nil) {
-        _cities = [MTCity mj_objectArrayWithFilename:@"cities.plist"];
-    }
-    return _cities;
-}
--(NSArray *)citiGroups{
-    if (_citiGroups == nil) {
-        _citiGroups = [MTCityGroup mj_objectArrayWithFilename:@"cityGroups.plist"];
-    }
-    return _citiGroups;
-}
+
+
 #pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupNavigationBar];
+    
+    [self setupSearchResultTVC];
+    
+}
+-(void)setupNavigationBar
+{
+    //setup navigationBar
     self.title = @"切换城市";
     UIBarButtonItem *item = [UIBarButtonItem itemWithTarget:self action:@selector(dismiss) imageName:@"btn_navigation_close" selecteImageName:@"btn_navigation_close_hl"];
     self.navigationItem.leftBarButtonItem = item;
     self.view.autoresizingMask = UIViewAutoresizingNone;
+}
+-(void)setupSearchResultTVC
+{
+    MTSearchResultTVC *tvc = [[MTSearchResultTVC alloc]init];
+    [self addChildViewController:tvc];
+    self.resultTVC = tvc;
+    [self.view addSubview:self.resultTVC.view];
+    [self.resultTVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.top.equalTo(self.searchBar.mas_bottom).offset(10);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
+    self.resultTVC.view.alpha = 0.1;
 }
 -(void)dismiss{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark - tableview data source
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-  return  self.citiGroups.count;
+  return  [MTMetaTool cityGroups].count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    MTCityGroup *group =  [self.citiGroups objectAtIndex:section];
+    MTCityGroup *group =  [[MTMetaTool cityGroups] objectAtIndex:section];
     return group.cities.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -59,19 +74,18 @@ const int coverTag = 1000;
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    MTCityGroup *cityGroup = [self.citiGroups objectAtIndex:indexPath.section];
+    MTCityGroup *cityGroup = [ [MTMetaTool cityGroups] objectAtIndex:indexPath.section];
    
     cell.textLabel.text =  [cityGroup.cities objectAtIndex:indexPath.row];
     return cell;
 }
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [[self.citiGroups objectAtIndex:section] title];
+    return [[ [MTMetaTool cityGroups] objectAtIndex:section] title];
 }
 #pragma mark - tableview delegate
 //索引
 -(NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
-    NSArray *titles =  [self.citiGroups valueForKeyPath:@"title"];
-    return titles;
+    return    [ [MTMetaTool cityGroups] valueForKeyPath:@"title"];
 }
 #pragma mark - searchBar delegate
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
@@ -104,4 +118,16 @@ const int coverTag = 1000;
 
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
 }
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    JWLog(@"searchText: %@",searchText);
+    self.resultTVC.view.alpha = 1;
+    [self.view bringSubviewToFront:self.resultTVC.view];
+    self.resultTVC.result = [MTMetaTool citiesWithSearchText:searchText];
+    if (searchText.length == 0) {
+        self.resultTVC.view.alpha = 0;
+    }
+}
+
 @end

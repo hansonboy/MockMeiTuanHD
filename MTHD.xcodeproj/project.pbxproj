@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4242C72945224168897AB2EE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 412D1E9302BD278A2BDD8943 /* libPods.a */; };
+		CB0E42221CBA3D5C00F5B86C /* MTMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0E42211CBA3D5C00F5B86C /* MTMetaTool.m */; };
+		CB0E42251CBA6FCE00F5B86C /* MTSearchResultTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0E42241CBA6FCE00F5B86C /* MTSearchResultTVC.m */; };
 		CB7297501CBA276F000CECCA /* MTRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72974F1CBA276F000CECCA /* MTRegion.m */; };
 		CB8090A81CA9723500B2460B /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A41CA9723500B2460B /* categories.plist */; };
 		CB8090A91CA9723500B2460B /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB8090A51CA9723500B2460B /* cities.plist */; };
@@ -61,6 +63,10 @@
 /* Begin PBXFileReference section */
 		2D134C37F6911C1D8BE6727B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		412D1E9302BD278A2BDD8943 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0E42201CBA3D5C00F5B86C /* MTMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMetaTool.h; sourceTree = "<group>"; };
+		CB0E42211CBA3D5C00F5B86C /* MTMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMetaTool.m; sourceTree = "<group>"; };
+		CB0E42231CBA6FCE00F5B86C /* MTSearchResultTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSearchResultTVC.h; sourceTree = "<group>"; };
+		CB0E42241CBA6FCE00F5B86C /* MTSearchResultTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSearchResultTVC.m; sourceTree = "<group>"; };
 		CB72974E1CBA276F000CECCA /* MTRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRegion.h; sourceTree = "<group>"; };
 		CB72974F1CBA276F000CECCA /* MTRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRegion.m; sourceTree = "<group>"; };
 		CB8090A41CA9723500B2460B /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
@@ -163,6 +169,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB0E421F1CBA3D4200F5B86C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CB0E42201CBA3D5C00F5B86C /* MTMetaTool.h */,
+				CB0E42211CBA3D5C00F5B86C /* MTMetaTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		CB8090A31CA9723500B2460B /* Plist */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8091441CA974B300B2460B /* Controller */,
+				CB0E421F1CBA3D4200F5B86C /* Tool */,
 				CB8091471CA974B300B2460B /* Model */,
 				CB8091481CA974B300B2460B /* View */,
 			);
@@ -209,6 +225,8 @@
 				CBF0DA8F1CAC284400362004 /* Storyboard.storyboard */,
 				CBF0DA911CAC290E00362004 /* MTSortViewController.h */,
 				CBF0DA921CAC290E00362004 /* MTSortViewController.m */,
+				CB0E42231CBA6FCE00F5B86C /* MTSearchResultTVC.h */,
+				CB0E42241CBA6FCE00F5B86C /* MTSearchResultTVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,8 +575,10 @@
 				CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */,
 				CB91FD151CABC4AC00B9E74C /* MTRegionViewController.m in Sources */,
 				CB80916E1CA9B4FD00B2460B /* MTCatogeryViewController.m in Sources */,
+				CB0E42221CBA3D5C00F5B86C /* MTMetaTool.m in Sources */,
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
+				CB0E42251CBA6FCE00F5B86C /* MTSearchResultTVC.m in Sources */,
 				CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,

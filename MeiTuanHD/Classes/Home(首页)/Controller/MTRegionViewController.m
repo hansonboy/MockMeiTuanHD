@@ -14,11 +14,12 @@
 #import "MTCity.h"
 #import "MTRegion.h"
 #import "Masonry.h"
+#import "MTMetaTool.h"
 @interface MTRegionViewController ()<MTDropDownViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *topChangeCityView;
 @property (nonatomic ,weak) MTDropDownView *dropDownView;
-@property (nonatomic ,strong)NSArray *cities;
+
 @property (nonatomic ,strong)NSArray *regions;
 
 @end
@@ -28,21 +29,11 @@
 {
     if(_regions == nil)
     {
-        _regions = [self.cities[141] regions];
+        _regions = [[MTMetaTool cities][141] regions];
     }
     return _regions;
 }
--(NSArray *)cities
-{
-    if( _cities == nil)
-    {
-        [MTCity setupObjectClassInArray:^NSDictionary *{
-            return @{@"regions":@"MTRegion"};
-        }];
-        _cities = [MTCity mj_objectArrayWithFilename:@"cities.plist"];
-    }
-    return _cities;
-}
+
 - (IBAction)changeCity {
     MTChangeCityViewController *changeCity = [[MTChangeCityViewController alloc]init];
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:changeCity];
