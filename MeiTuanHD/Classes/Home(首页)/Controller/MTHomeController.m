@@ -20,7 +20,8 @@
 #import "MTCity.h"
 #import "MTSort.h"
 #import "MTChangeCityViewController.h"
-@interface MTHomeController()
+#import "DPAPI.h"
+@interface MTHomeController()<DPRequestDelegate>
 /**
  *  分类
  */
@@ -35,12 +36,21 @@
 @property (weak,nonatomic) UIBarButtonItem *sortItem;
 
 /**为了再次打开区域下拉菜单时候的时候默认选中相应的区域*/
+/** 当前选中的category*/
+@property (nonatomic ,assign)NSInteger selectedCategoryIndex;
+/** 当前选中的subcategory*/
+@property (nonatomic ,assign)NSInteger selectedSubCategoryIndex;
+
 /** 当前选中的城市*/
 @property (nonatomic ,assign)NSInteger selectedCityIndex;
 /** 当前选中的区域*/
 @property (nonatomic ,assign)NSInteger selectedRegionIndex;
 /** 当前选中的子区域*/
 @property (nonatomic ,assign)NSInteger selectedSubregionIndex;
+
+/** 当前选中的排序规则*/
+@property (nonatomic ,assign)NSInteger selectedSortIndex;
+
 @end
 @implementation MTHomeController
 #pragma mark -初始化
@@ -62,7 +72,6 @@
 -(void)setupLeftBarBtnItem{
     //1.logo
     UIBarButtonItem *logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
-    //TODO: 初始化TopItem添加
     //2.类别
     MTHomeTopItem * category = [[MTHomeTopItem alloc]init];
     [category setTitle:@"美团"];
@@ -123,6 +132,9 @@
     NSString *detailTitle = index == 0?category.name:category.subcategories[index];
     [item setDetailTitle:detailTitle];
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    self.selectedCategoryIndex = masterIndex;
+    self.selectedSubCategoryIndex = index;
+    [self loadNewDeals];
 }
 -(void)updateRegionItem:(NSNotification *)notification
 {
@@ -152,6 +164,8 @@
     self.selectedSubregionIndex = subRegionIndex;
     
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    [self loadNewDeals];
 }
 -(void)updateSortItem:(NSNotification *)noti
 {
@@ -160,7 +174,8 @@
     MTSort *sort = [[MTMetaTool sorts]objectAtIndex:index];
     [item setDetailTitle:sort.label];
     [item setTitle:@"排序"];
-    
+    self.selectedSortIndex = sort.value.integerValue;
+    [self loadNewDeals];
 }
 -(void)dealloc
 {
@@ -168,6 +183,48 @@
     [KNotificationCenter removeObserver:self name:kMTRegionDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTSortViewControllerDidNewSortNotification object:nil];
+}
+#pragma mark - 请求服务器的数据
+/** 获取新的请求订单，API参考大众点评：http://developer.dianping.com/app/api/v1/deal/find_deals*/
+- (void)loadNewDeals {
+    DPAPI *dp = [[DPAPI alloc]init];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    //添加分类条件
+    if (self.selectedCategoryIndex!=0) {
+        
+        MTCategory *category = [MTMetaTool categoryByIndex:self.selectedCategoryIndex];
+        
+        NSString *name = self.selectedSubCategoryIndex == 0 ?category.name:[category.subcategories objectAtIndex:self.selectedSubCategoryIndex];
+        params[@"category"] = name;
+    }
+     //添加城市条件
+    MTCity *city = [MTMetaTool cityByIndex:self.selectedCityIndex];
+    params[@"city"] = city.name;
+    //添加区域条件
+    if(self.selectedRegionIndex)
+    {
+        MTRegion *region = [city.regions objectAtIndex:self.selectedRegionIndex];
+        NSString *detailRegion = self.selectedSubregionIndex == 0?region.name:[region.subregions objectAtIndex:self.selectedSubregionIndex];
+        if(detailRegion)
+            params[@"region"] = detailRegion;
+    }
+    //排序规则
+    params[@"sort"] = @(self.selectedSortIndex);
+    //单页限制
+    params[@"limit"] = @5;
+    [dp requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+    
+
+    JWLog(@"%@",params);
+}
+#pragma mark - DP request delegate
+- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    JWLog(@"%@",error);
+}
+-(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+    JWLog(@"%@",result);
 }
 #pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
