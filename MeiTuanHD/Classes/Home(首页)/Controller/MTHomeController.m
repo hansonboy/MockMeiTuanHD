@@ -201,7 +201,7 @@
     MTCity *city = [MTMetaTool cityByIndex:self.selectedCityIndex];
     params[@"city"] = city.name;
     //添加区域条件
-    if(self.selectedRegionIndex)
+    if(self.selectedRegionIndex)
     {
         MTRegion *region = [city.regions objectAtIndex:self.selectedRegionIndex];
         NSString *detailRegion = self.selectedSubregionIndex == 0?region.name:[region.subregions objectAtIndex:self.selectedSubregionIndex];
