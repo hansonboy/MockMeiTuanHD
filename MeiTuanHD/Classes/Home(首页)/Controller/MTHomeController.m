@@ -72,6 +72,7 @@
     
     //3.地区
     MTHomeTopItem * city = [[MTHomeTopItem alloc]init];
+    [city setTitle:@"区域"];
     [city addTarget:self action:@selector(changeCity)];
     UIBarButtonItem *cityItem = [[UIBarButtonItem alloc]initWithCustomView:city];
     self.cityItem = cityItem;
@@ -79,6 +80,8 @@
     //4.排序
     MTHomeTopItem * sort = [[MTHomeTopItem alloc]init];
      [sort addTarget:self action:@selector(sort)];
+    [sort setImage:@"icon_sort" highImage:@"icon_sort_highlighted"];
+    [sort setTitle:@"排序"];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc]initWithCustomView:sort];
     self.sortItem = sortItem;
     
@@ -174,24 +177,22 @@
       JWLog(@"");
 }
 -(void)sort{
-
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-    JWLog(@"");
+
     MTSortViewController *sortVC = [[MTSortViewController alloc]init];;
     UIPopoverController *popoverVC = [[UIPopoverController alloc]initWithContentViewController:sortVC];
     [popoverVC presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    //TODO: 处理sort分类
 }
 -(void)changeCategory{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-    JWLog(@"");
+ 
     MTCatogeryViewController *setCatogeryVC = [[MTCatogeryViewController alloc]init];
     UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:setCatogeryVC];
     [popoverController presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 -(void)changeCity{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-    JWLog(@"");
+  
     MTRegionViewController *changeCityVC = [[MTRegionViewController alloc]init];
     changeCityVC.selectedCityIndex = self.selectedCityIndex;
     changeCityVC.selectedRegionIndex = self.selectedRegionIndex;
