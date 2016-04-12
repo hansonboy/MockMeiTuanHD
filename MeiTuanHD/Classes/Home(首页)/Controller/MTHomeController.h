@@ -7,7 +7,7 @@
 //主页功能
 
 #import <UIKit/UIKit.h>
-
-@interface MTHomeController : UICollectionViewController
+#import "MTDealCollectionViewController.h"
+@interface MTHomeController : MTDealCollectionViewController
 
 @end

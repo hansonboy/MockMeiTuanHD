@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482171247.629032"
+            timestampString = "482175652.490775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-changeCity"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,44 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482171247.629032"
+            timestampString = "482175652.490775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-changeCategory"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482171247.629032"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-viewWillTransitionToSize:withTransitionCoordinator:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482171247.629032"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "-request:didFinishLoadingWithResult:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
