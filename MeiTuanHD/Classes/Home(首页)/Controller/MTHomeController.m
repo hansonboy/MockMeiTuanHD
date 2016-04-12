@@ -63,6 +63,8 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 @property (nonatomic ,assign)NSInteger currentPage;
 /** 总的订单数量*/
 @property (nonatomic ,assign)NSInteger totalCount;
+/** 最近的一次请求：出现多次请求冲突的时候，响应最近一次请求*/
+@property (nonatomic ,strong)DPRequest  *recentRequest;
 @end
 @implementation MTHomeController
 #pragma mark -初始化collectionView 及上拉刷新下拉刷新
@@ -262,7 +264,7 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
     //单页限制
     params[@"limit"] = @(countPerPage);
     params[@"page"] = @(self.currentPage);
-    [dp requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+    self.recentRequest = [dp requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
     JWLog(@"%@",params);
 
 }
@@ -288,7 +290,8 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 }
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
-    JWLog(@"---=======订单总数是：%@",result[@"total_count"]);
+    //当不是最近的一次请求返回的时候，忽略该请求结果
+    if(![self.recentRequest isEqual:request])return;
     if(self.currentPage == 1)
     {
         [self.collectionView.mj_header endRefreshing];

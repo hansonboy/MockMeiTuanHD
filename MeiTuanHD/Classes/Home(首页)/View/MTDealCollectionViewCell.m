@@ -37,7 +37,6 @@
     NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
     fmt.dateFormat = @"yyyy-MM-dd";
     NSString *now = [fmt stringFromDate:[NSDate date]];
-    JWLog(@"%@-%@",now,deal.publish_date);
     if ([now compare:deal.publish_date]!= NSOrderedDescending) {
         self.dealNew.hidden = NO;
     }else{
