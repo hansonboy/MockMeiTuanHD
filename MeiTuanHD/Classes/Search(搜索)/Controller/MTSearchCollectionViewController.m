@@ -32,10 +32,12 @@
     [self.collectionView.mj_header beginRefreshing];
 }
 - (void)viewDidLoad {
+
+    
     [super viewDidLoad];
-    
+    //设置左边的item
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(goBack) imageName:@"icon_back" selecteImageName:@"icon_back_highlighted"];
-    
+    //设置标题item
     UISearchBar *searchBar = [[UISearchBar alloc]init];
     searchBar.placeholder = @"请输入关键字";
     searchBar.delegate = self;

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482175652.490775"
+            timestampString = "482233049.013277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "-changeCity"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "-setupAwesomeMenu"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "482175652.490775"
+            timestampString = "482233049.013277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "-changeCategory"
             landmarkType = "5">
          </BreakpointContent>

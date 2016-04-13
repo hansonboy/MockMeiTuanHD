@@ -25,8 +25,10 @@
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import "MTSearchCollectionViewController.h"
+#import "AwesomeMenu.h"
+#import "Masonry.h"
 
-@interface MTHomeController()
+@interface MTHomeController()<AwesomeMenuDelegate>
 /**
  *  分类
  */
@@ -100,6 +102,8 @@
     
     //设置默认的选中的排序类别
      self.selectedSortIndex = 1;
+    
+    [self setupAwesomeMenu];
 }
 
 -(void)setupLeftBarBtnItem{
@@ -221,6 +225,7 @@
 -(void)search:(id)sender{
     JWLog(@"");
      MTSearchCollectionViewController *searchCVC = [[MTSearchCollectionViewController alloc]init];
+    searchCVC.city = [MTMetaTool cityByIndex:self.selectedCityIndex].name;
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:searchCVC];
     [self presentViewController:navi animated:YES completion:nil];
 }
@@ -251,5 +256,57 @@
     UIPopoverController *popoverController = [[UIPopoverController alloc]initWithContentViewController:changeCityVC];
     [popoverController presentPopoverFromBarButtonItem:self.cityItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
+#pragma mark - setup awesomeMenu
+-(void)setupAwesomeMenu
+{
+    AwesomeMenuItem *collectItem = [[AwesomeMenuItem alloc]initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *scanItem = [[AwesomeMenuItem alloc]initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
+    AwesomeMenuItem *moreItem = [[AwesomeMenuItem alloc]initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    AwesomeMenuItem *otherItem = [[AwesomeMenuItem alloc]initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    
+    //开始按钮
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc]initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc]initWithFrame:CGRectZero startItem:startItem optionMenus:@[collectItem,scanItem,moreItem,otherItem]];
+    menu.menuWholeAngle = M_PI/2;
+    [self.view addSubview:menu];
+    
+    [menu mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.width.equalTo(@100);
+        make.height.equalTo(@100);
+    }];
+    menu.rotateAddButton = NO;
+    menu.startPoint = CGPointMake(50,50);
+    menu.delegate = self;
+}
 
+#pragma mark - awesomeMenu delegate
+-(void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    JWLog(@"%d",idx);
+    switch (idx) {
+        case 0:{//收藏
+            
+         break;
+        }
+          
+        case 1:{//最近
+            
+            break;
+        }
+        default:
+            break;
+    }
+}
+-(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu
+{
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+}
+-(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu
+{
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+
+}
 @end

@@ -113,6 +113,9 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
         [self.collectionView.mj_header endRefreshing];
         [self.deals removeAllObjects];
         self.deals = [MTDeal mj_objectArrayWithKeyValuesArray:result[@"deals"]];
+        if (self.deals.count == 0) {
+            [MBProgressHUD showError:@"没有满足要求的团购" toView:self.view];
+        }
         //如果不能够一行全部返回的话，那么就显示上拉刷新功能
         self.collectionView.mj_footer.hidden = countPerPage*self.currentPage > [result[@"total_count"] integerValue];
     }
