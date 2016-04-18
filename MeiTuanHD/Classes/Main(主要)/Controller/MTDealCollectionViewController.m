@@ -99,9 +99,15 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 {
     if (error != nil) {
         JWLog(@"%@",error);
-        [MBProgressHUD showError:@"网络出故障了，请您稍后再试" toView:self.view];
+        [MBProgressHUD showError:@"请求的团购不存在" toView:self.view];
+        [self.deals removeAllObjects];
+        [self.collectionView reloadData];
         [self.collectionView.mj_header endRefreshing];
+        
+        //返回的团购不存在，相当于返回一个空的数据
+        [self request:self.recentRequest didFinishLoadingWithResult:nil];
         [self.collectionView.mj_footer endRefreshing];
+        
     }
 }
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
@@ -135,7 +141,7 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 #pragma mark - UICollectionViewController data source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    JWLog(@"----");
+   
     [self viewWillTransitionToSize:CGSizeMake(self.collectionView.frame.size.width, 0) withTransitionCoordinator:nil];
     return self.deals.count;
 }

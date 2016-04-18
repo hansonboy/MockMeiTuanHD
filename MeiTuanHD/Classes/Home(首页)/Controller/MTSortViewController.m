@@ -19,11 +19,9 @@ NSString *const kMTSortNumberUserInfoKey = @"kMTSortNumberUserInfoKey";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    JWLog(@"");
 }
 -(void)viewDidLayoutSubviews
 {
-    JWLog(@"");
     CGFloat btnYM = 10;
     CGFloat btnXM = 10;
     CGFloat btnX = btnXM ;

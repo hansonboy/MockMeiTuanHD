@@ -43,6 +43,7 @@
     searchBar.delegate = self;
     self.navigationItem.titleView = searchBar;
 }
+#pragma mark - action
 - (void)goBack {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -19,4 +19,5 @@
 #include "const.h"
 #define BgColor [UIColor colorWithRed:230.0 green:230.0 blue:230.0 alpha:1.0]
 #define  KNotificationCenter [NSNotificationCenter defaultCenter]
+#define kMTUserDefaults     [NSUserDefaults standardUserDefaults]
 #endif /* const_pch */

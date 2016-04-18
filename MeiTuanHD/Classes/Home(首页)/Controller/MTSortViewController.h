@@ -10,5 +10,5 @@
 extern NSString *const kMTSortViewControllerDidNewSortNotification;
 extern NSString *const kMTSortNumberUserInfoKey ;
 @interface MTSortViewController : UIViewController
--(void)addTarget:(id)sender action:(nonnull SEL)action;
+
 @end

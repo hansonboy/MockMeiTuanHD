@@ -18,26 +18,26 @@
 @end
 @implementation MTDropDownView
 #pragma mark 测试下什么时候会调用awakeFromNib：自定义view时候，会先调用initWithCoder:，然后是awakeFromNib 方法
--(void)awakeFromNib{
-    [super awakeFromNib];
-    JWLog(@"");
-}
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if (self == [super initWithCoder:aDecoder]) {
-        JWLog(@"");
-    }
-    return self;
-}
--(instancetype)initWithFrame:(CGRect)frame{
-    if (self == [super initWithFrame:frame]) {
-        JWLog(@"");
-    }
-    return self;
-}
--(void)layoutSubviews{
-    [super layoutSubviews];
-    JWLog(@"");
-}
+//-(void)awakeFromNib{
+//    [super awakeFromNib];
+//    JWLog(@"");
+//}
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//    if (self == [super initWithCoder:aDecoder]) {
+//        JWLog(@"");
+//    }
+//    return self;
+//}
+//-(instancetype)initWithFrame:(CGRect)frame{
+//    if (self == [super initWithFrame:frame]) {
+//        JWLog(@"");
+//    }
+//    return self;
+//}
+//-(void)layoutSubviews{
+//    [super layoutSubviews];
+//    JWLog(@"");
+//}
 
 +(instancetype)dropDownView
 {

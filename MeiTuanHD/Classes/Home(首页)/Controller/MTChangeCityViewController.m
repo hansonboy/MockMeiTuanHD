@@ -133,7 +133,7 @@ const int coverTag = 1000;
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    JWLog(@"searchText: %@",searchText);
+
     self.resultTVC.view.alpha = 1;
     [self.view bringSubviewToFront:self.resultTVC.view];
     self.resultTVC.result = [MTMetaTool citiesWithSearchText:searchText];

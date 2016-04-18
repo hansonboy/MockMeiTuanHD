@@ -24,7 +24,7 @@
 
 
 @end
-NSString *const kMTRegionWillChangeNotification = @"kMTRegionWillChangeNotification";
+NSString *const kMTCityWillChangeNotification = @"kMTRegionWillChangeNotification";
 NSString *const kMTRegionDidChangedNotification = @"kMTRegionDidChangedNotification";
 NSString *const kMTRegionSelectedCityIndexUserInfoKey = @"kMTRegionSelectedCityIndexUserInfoKey";
 NSString *const kMTRegionSelectedRegionIndexUserInfoKey = @"kMTRegionSelectedRegionIndexUserInfoKey";
@@ -44,7 +44,7 @@ NSString *const kMTRegionSelectedSubRegionIndexUserInfoKey = @"kMTRegionSelected
 }
 
 - (IBAction)changeCity {
-    [KNotificationCenter postNotificationName:kMTRegionWillChangeNotification object:self];
+    [KNotificationCenter postNotificationName:kMTCityWillChangeNotification object:self];
 }
 -(void)viewDidLoad
 {
