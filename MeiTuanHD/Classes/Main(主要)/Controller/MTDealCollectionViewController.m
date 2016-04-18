@@ -15,6 +15,7 @@
 #import "MTDealCollectionViewCell.h"
 #import "MBProgressHUD+MJ.h"
 #import "MJExtension.h"
+#import "Masonry.h"
 @interface MTDealCollectionViewController ()<DPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 /** 最近的一次请求：出现多次请求冲突的时候，响应最近一次请求*/
 @property (nonatomic ,strong)DPRequest  *recentRequest;
@@ -24,6 +25,8 @@
 @property (nonatomic ,assign)NSInteger currentPage;
 /** 总的订单数量*/
 @property (nonatomic ,assign)NSInteger totalCount;
+/** 不含数据时候返回该dataView*/
+@property (nonatomic ,strong)UIImageView *noDataView;
 @end
 
 @implementation MTDealCollectionViewController
@@ -31,6 +34,20 @@
 static const NSInteger countPerPage = 40;
 static NSString *const identificer = @"MTDealCollectionViewCell";
 
+#pragma mark - noDataView 设置
+- (UIImageView *)noDataView
+{
+    if (_noDataView == nil) {
+        _noDataView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_deals_empty"]];
+        [self.collectionView addSubview:_noDataView];
+        _noDataView.hidden = YES;
+        [_noDataView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.collectionView.mas_centerX);
+            make.centerY.equalTo(self.collectionView.mas_centerY);
+        }];
+    }
+    return _noDataView;
+}
 #pragma mark -初始化collectionView 及上拉刷新下拉刷新
 -(instancetype)init{
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -103,7 +120,7 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
         [self.deals removeAllObjects];
         [self.collectionView reloadData];
         [self.collectionView.mj_header endRefreshing];
-        
+        self.noDataView.hidden = NO;
         //返回的团购不存在，相当于返回一个空的数据
         [self request:self.recentRequest didFinishLoadingWithResult:nil];
         [self.collectionView.mj_footer endRefreshing];
@@ -141,13 +158,14 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 #pragma mark - UICollectionViewController data source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-   
+   //设置第一次加载的间距
     [self viewWillTransitionToSize:CGSizeMake(self.collectionView.frame.size.width, 0) withTransitionCoordinator:nil];
+    
     return self.deals.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.noDataView.hidden = YES;
     MTDealCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identificer forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[MTDealCollectionViewCell alloc]init];
