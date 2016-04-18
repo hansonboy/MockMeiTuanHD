@@ -118,7 +118,6 @@
     self.selectedRegionIndex = -1;
     [self setupAwesomeMenu];
 
-   
 }
 
 -(void)setupLeftBarBtnItem{
