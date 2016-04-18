@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
+extern NSString *const kMTRegionWillChangeNotification;
 extern NSString *const kMTRegionDidChangedNotification;
+
 extern NSString *const kMTRegionSelectedCityIndexUserInfoKey;
 extern NSString *const kMTRegionSelectedRegionIndexUserInfoKey ;
 extern NSString *const kMTRegionSelectedSubRegionIndexUserInfoKey;

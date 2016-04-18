@@ -53,6 +53,8 @@
 		CB97CF3B1CBCE769005AF893 /* MTCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB97CF3A1CBCE769005AF893 /* MTCenterLineLabel.m */; };
 		CB97F3F51CBE4548009925B1 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CB97F3F21CBE4548009925B1 /* AwesomeMenu.m */; };
 		CB97F3F61CBE4548009925B1 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB97F3F41CBE4548009925B1 /* AwesomeMenuItem.m */; };
+		CB97F3FE1CBE8637009925B1 /* MTDetailDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB97F3FC1CBE8637009925B1 /* MTDetailDealViewController.m */; };
+		CB97F3FF1CBE8637009925B1 /* MTDetailDealViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB97F3FD1CBE8637009925B1 /* MTDetailDealViewController.xib */; };
 		CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */; };
 		CBAC4EEF1CBABE3700BDCA1B /* MTSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */; };
 		CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */; };
@@ -60,6 +62,7 @@
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
 		CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */; };
 		CBCFD7001CA9662D009990C6 /* MeiTuanHDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */; };
+		CBEF6F9C1CC4D0EC001A4D9A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CBEF6F9B1CC4D0EC001A4D9A /* README.md */; };
 		CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA951CAC41EE00362004 /* MTCityGroup.m */; };
 		CBF0DA991CAC42EF00362004 /* MTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA981CAC42EF00362004 /* MTCity.m */; };
 /* End PBXBuildFile section */
@@ -166,6 +169,9 @@
 		CB97F3F21CBE4548009925B1 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		CB97F3F31CBE4548009925B1 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
 		CB97F3F41CBE4548009925B1 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		CB97F3FB1CBE8637009925B1 /* MTDetailDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDetailDealViewController.h; sourceTree = "<group>"; };
+		CB97F3FC1CBE8637009925B1 /* MTDetailDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDetailDealViewController.m; sourceTree = "<group>"; };
+		CB97F3FD1CBE8637009925B1 /* MTDetailDealViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTDetailDealViewController.xib; sourceTree = "<group>"; };
 		CBAC4EEA1CBABD4400BDCA1B /* MTSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSort.h; sourceTree = "<group>"; };
 		CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSort.m; sourceTree = "<group>"; };
 		CBAC4EED1CBABE3700BDCA1B /* MTSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSortViewController.h; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		CBCFD6FB1CA9662D009990C6 /* MTHD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTHD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCFD6FF1CA9662D009990C6 /* MeiTuanHDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiTuanHDUITests.m; sourceTree = "<group>"; };
 		CBCFD7011CA9662D009990C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBEF6F9B1CC4D0EC001A4D9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CBF0DA941CAC41EE00362004 /* MTCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCityGroup.h; sourceTree = "<group>"; };
 		CBF0DA951CAC41EE00362004 /* MTCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCityGroup.m; sourceTree = "<group>"; };
 		CBF0DA971CAC42EF00362004 /* MTCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCity.h; sourceTree = "<group>"; };
@@ -285,6 +292,8 @@
 		CB8091421CA974B300B2460B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CB97F3F91CBE85E3009925B1 /* RecentSee(最近浏览) */,
+				CB97F3F71CBE85D4009925B1 /* Collect(收藏) */,
 				CB40ACE81CBD5C7F000D23B5 /* Search(搜索) */,
 				CB8091431CA974B300B2460B /* Home(首页) */,
 				CB8091491CA974B300B2460B /* Main(主要) */,
@@ -385,6 +394,9 @@
 				CB80914C1CA974B300B2460B /* MTNavigationController.m */,
 				CB40ACED1CBD5D13000D23B5 /* MTDealCollectionViewController.h */,
 				CB40ACEE1CBD5D13000D23B5 /* MTDealCollectionViewController.m */,
+				CB97F3FB1CBE8637009925B1 /* MTDetailDealViewController.h */,
+				CB97F3FC1CBE8637009925B1 /* MTDetailDealViewController.m */,
+				CB97F3FD1CBE8637009925B1 /* MTDetailDealViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,9 +497,40 @@
 			path = AwesomeMenu;
 			sourceTree = "<group>";
 		};
+		CB97F3F71CBE85D4009925B1 /* Collect(收藏) */ = {
+			isa = PBXGroup;
+			children = (
+				CB97F3F81CBE85D4009925B1 /* Controller */,
+			);
+			path = "Collect(收藏)";
+			sourceTree = "<group>";
+		};
+		CB97F3F81CBE85D4009925B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB97F3F91CBE85E3009925B1 /* RecentSee(最近浏览) */ = {
+			isa = PBXGroup;
+			children = (
+				CB97F3FA1CBE85F6009925B1 /* Controller */,
+			);
+			path = "RecentSee(最近浏览)";
+			sourceTree = "<group>";
+		};
+		CB97F3FA1CBE85F6009925B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CBCFD6CE1CA9662D009990C6 = {
 			isa = PBXGroup;
 			children = (
+				CBEF6F9B1CC4D0EC001A4D9A /* README.md */,
 				CBCFD6D91CA9662D009990C6 /* MeiTuanHD */,
 				CBCFD6F31CA9662D009990C6 /* MeiTuanHDTests */,
 				CBCFD6FE1CA9662D009990C6 /* MeiTuanHDUITests */,
@@ -655,6 +698,7 @@
 				CB97CF351CBCC280005AF893 /* MTDealCollectionViewCell.xib in Resources */,
 				CB8090A81CA9723500B2460B /* categories.plist in Resources */,
 				CB40ACE61CBD586F000D23B5 /* MBProgressHUD.bundle in Resources */,
+				CB97F3FF1CBE8637009925B1 /* MTDetailDealViewController.xib in Resources */,
 				CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */,
 				CB91FD231CABE4D500B9E74C /* MTChangeCityViewController.xib in Resources */,
 				CB8091631CA98A1600B2460B /* MTHomeTopItem.xib in Resources */,
@@ -757,6 +801,7 @@
 				CB97CF341CBCC280005AF893 /* MTDealCollectionViewCell.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB97F3F51CBE4548009925B1 /* AwesomeMenu.m in Sources */,
+				CBEF6F9C1CC4D0EC001A4D9A /* README.md in Sources */,
 				CB97CF301CBB8530005AF893 /* NSDictionary+Log.m in Sources */,
 				CB40ACE71CBD586F000D23B5 /* MBProgressHUD.m in Sources */,
 				CB8091551CA974B300B2460B /* AppDelegate.m in Sources */,
@@ -770,6 +815,7 @@
 				CB8091601CA9830B00B2460B /* const.m in Sources */,
 				CB97CF161CBB7AED005AF893 /* DPRequest.m in Sources */,
 				CB7297501CBA276F000CECCA /* MTRegion.m in Sources */,
+				CB97F3FE1CBE8637009925B1 /* MTDetailDealViewController.m in Sources */,
 				CB97F3F61CBE4548009925B1 /* AwesomeMenuItem.m in Sources */,
 				CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */,
 				CB91FD121CABA40700B9E74C /* MTCategory.m in Sources */,

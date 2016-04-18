@@ -4,7 +4,7 @@
 //
 //  Created by wangjianwei on 16/3/30.
 //  Copyright © 2016年 JW. All rights reserved.
-//
+//  显示下拉菜单中的当前的区域选择
 
 #import "MTRegionViewController.h"
 #import "MTDropDownView.h"
@@ -24,6 +24,7 @@
 
 
 @end
+NSString *const kMTRegionWillChangeNotification = @"kMTRegionWillChangeNotification";
 NSString *const kMTRegionDidChangedNotification = @"kMTRegionDidChangedNotification";
 NSString *const kMTRegionSelectedCityIndexUserInfoKey = @"kMTRegionSelectedCityIndexUserInfoKey";
 NSString *const kMTRegionSelectedRegionIndexUserInfoKey = @"kMTRegionSelectedRegionIndexUserInfoKey";
@@ -41,11 +42,9 @@ NSString *const kMTRegionSelectedSubRegionIndexUserInfoKey = @"kMTRegionSelected
     _regions = [MTMetaTool cityByIndex:self.selectedCityIndex].regions;
     return _regions;
 }
+
 - (IBAction)changeCity {
-    MTChangeCityViewController *changeCity = [[MTChangeCityViewController alloc]init];
-    MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:changeCity];
-    navi.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:navi animated:YES completion:nil];
+    [KNotificationCenter postNotificationName:kMTRegionWillChangeNotification object:self];
 }
 -(void)viewDidLoad
 {
@@ -64,6 +63,9 @@ NSString *const kMTRegionSelectedSubRegionIndexUserInfoKey = @"kMTRegionSelected
     NSInteger cityIndex =  [noti.userInfo[kMTCityIndexUserInfoKey] integerValue];
     //通过在selelctedCityIndex 设置方法中重新设置dataSource 然后强制刷新所有的tableView
     self.selectedCityIndex = cityIndex;
+    
+    //当前的下拉菜单显示进行消失
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)dealloc
 {

@@ -65,7 +65,18 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.collectionView.mj_header beginRefreshing];
+    //检查是否有选中的城市，如果没有提醒进行选择
+    if(self.selectedRegionIndex == -1)
+    {
+        //显示改变城市的控制器
+        //TODO: object 必须为nil，因为我调用的方法会将object dismiss掉
+        [KNotificationCenter postNotificationName:kMTRegionWillChangeNotification object:nil];
+       
+    }
+    else
+    {
+        [self.collectionView.mj_header beginRefreshing];
+    }
 }
 #pragma mark - 实现父类交给子类的方法
 -(void)setupParams:(NSMutableDictionary *)params
@@ -102,19 +113,22 @@
     
     //设置默认的选中的排序类别
      self.selectedSortIndex = 1;
-    
+//    //设置默认的选中的城市
+    //TODO: 应该将这个城市保存在本地中，然后从本地读取该保存下来的城市
+    self.selectedRegionIndex = -1;
     [self setupAwesomeMenu];
+
+   
 }
 
 -(void)setupLeftBarBtnItem{
     //1.logo
-    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
+    UIBarButtonItem * logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
     //2.类别
     MTHomeTopItem * category = [[MTHomeTopItem alloc]init];
     [category setTitle:@"美团"];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
-    [category addTarget:self action:@selector(changeCategory)];
-    self.categoryItem = categoryItem;
+    [category addTarget:self action:@selector(changeCategory)];      self.categoryItem = categoryItem;
     
     //3.地区
     MTHomeTopItem * city = [[MTHomeTopItem alloc]init];
@@ -148,6 +162,7 @@
 #pragma mark - add NSNotification
 -(void)addNotification
 {
+    
     [KNotificationCenter addObserver:self selector:@selector(updateCategoryItem:) name:kMTCategoryDidChangedNotification object:nil];
     
     [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTRegionDidChangedNotification object:nil];
@@ -155,6 +170,8 @@
     [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTCityDidChangedNotification object:nil];
     
     [KNotificationCenter addObserver:self selector:@selector(updateSortItem:) name:kMTSortViewControllerDidNewSortNotification object:nil];
+    
+    [KNotificationCenter addObserver:self selector:@selector(dismissRegionDropDown:) name:kMTRegionWillChangeNotification object:nil];
 }
 
 -(void)updateCategoryItem:(NSNotification *)notification
@@ -203,6 +220,7 @@
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     
     [self.collectionView.mj_header beginRefreshing];
+    
 }
 -(void)updateSortItem:(NSNotification *)noti
 {
@@ -214,18 +232,35 @@
     self.selectedSortIndex = sort.value.integerValue;
     [self.collectionView.mj_header beginRefreshing];
 }
+
+//点击区域下拉菜单的改变城市后，区域下拉菜单消失，然后modal具体的改变城市的controller
+- (void)dismissRegionDropDown:(NSNotification *)noti
+{
+    MTRegionViewController * region =   noti.object;
+    [region dismissViewControllerAnimated:YES completion:nil];
+    
+    //显示改变城市的controller
+    MTChangeCityViewController *changeCity = [[MTChangeCityViewController alloc]init];
+    MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:changeCity];
+    navi.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navi animated:YES completion:nil];
+    
+}
 -(void)dealloc
 {
     [KNotificationCenter removeObserver:self name:kMTCategoryDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTRegionDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTSortViewControllerDidNewSortNotification object:nil];
+    [KNotificationCenter removeObserver:self name:kMTRegionWillChangeNotification object:nil];
 }
 #pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
     JWLog(@"");
      MTSearchCollectionViewController *searchCVC = [[MTSearchCollectionViewController alloc]init];
+    
     searchCVC.city = [MTMetaTool cityByIndex:self.selectedCityIndex].name;
+    
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:searchCVC];
     [self presentViewController:navi animated:YES completion:nil];
 }
@@ -289,14 +324,16 @@
     switch (idx) {
         case 0:{//收藏
             
+            menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
          break;
         }
           
         case 1:{//最近
-            
+            //TODO: 最近浏览
+            menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
             break;
         }
-        default:
+        default:
             break;
     }
 }
@@ -309,4 +346,5 @@
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
 
 }
+
 @end
