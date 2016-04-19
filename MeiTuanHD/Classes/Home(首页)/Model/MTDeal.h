@@ -29,12 +29,13 @@
 @property (nonatomic ,copy) NSString *publish_date;
 /**团购单的截止购买日期*/
 @property (nonatomic ,copy) NSString *purchase_deadline;
-//
+/**团购Web页面链接，适用于网页应用*/
+@property (nonatomic ,copy) NSString *deal_url;
+
 //city	string	城市名称，city为＂全国＂表示全国单，其他为本地单，城市范围见相关API返回结果
 //regions	list	团购适用商户所在行政区
 //categories	list	团购所属分类
 //distance	int	团购单所适用商户中距离参数坐标点最近的一家与坐标点的距离，单位为米；如不传入经纬度坐标，结果为-1；如团购单无关联商户，结果为MAXINT
-//deal_url	string	团购Web页面链接，适用于网页应用
 //deal_h5_url	string	团购HTML5页面链接，适用于移动应用和联网车载应用
 //commission_ratio	float	当前团单的佣金比例
 //businesses	list	团购所适用的商户列表

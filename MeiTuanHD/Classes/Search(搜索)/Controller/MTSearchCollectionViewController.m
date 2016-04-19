@@ -24,7 +24,6 @@
         params[@"keyword"] = self.keyword;
         params[@"city"] = self.city ? self.city : @"北京";
     }
-   
 }
 #pragma mark - 初始化
 - (void)setKeyword:(NSString *)keyword {
@@ -32,8 +31,6 @@
     [self.collectionView.mj_header beginRefreshing];
 }
 - (void)viewDidLoad {
-
-    
     [super viewDidLoad];
     //设置左边的item
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(goBack) imageName:@"icon_back" selecteImageName:@"icon_back_highlighted"];

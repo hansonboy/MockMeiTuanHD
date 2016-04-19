@@ -1,14 +1,42 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 43,
+          "top" : 43,
+          "right" : 43,
+          "left" : 42
+        }
+      },
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "icon_collect.png"
+      "filename" : "icon_collect.png",
+      "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 87,
+          "top" : 86,
+          "right" : 86,
+          "left" : 85
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "icon_collect@2x.png"
+      "filename" : "icon_collect@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

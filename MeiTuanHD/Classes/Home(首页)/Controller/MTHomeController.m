@@ -67,18 +67,15 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 #pragma mark - 恢复本地保存的字段
 - (NSInteger)selectedCityIndex
 {
-    //初始化为-1，表示还没有从本地进行加载
-    
     _selectedCityIndex = [kMTUserDefaults integerForKey:kMTUserDefaultsCityKey];
-    JWLog(@"get:%d",_selectedCityIndex);
     return _selectedCityIndex;
 }
 
 -(void)setSelectedCityIndex:(NSInteger)selectedCityIndex
 {
     _selectedCityIndex = selectedCityIndex;
-    JWLog(@"set:%d",_selectedCityIndex);
     [kMTUserDefaults setInteger:_selectedCityIndex forKey:kMTUserDefaultsCityKey];
+    [kMTUserDefaults synchronize];
 }
 #pragma mark - 开始启动时候加载数据
 -(void)viewWillAppear:(BOOL)animated
@@ -210,7 +207,6 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 }
 -(void)updateRegionItem:(NSNotification *)notification
 {
-    JWLog(@"%@",notification.userInfo);
     MTHomeTopItem *item = (MTHomeTopItem *)self.cityItem.customView;
     if (notification.name == kMTCityDidChangedNotification) {
         self.selectedCityIndex = [notification.userInfo[kMTCityIndexUserInfoKey] integerValue];

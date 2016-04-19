@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MTDeal;
 @interface MTDetailDealViewController : UIViewController
-
+@property (nonatomic ,strong)MTDeal *deal;
 @end

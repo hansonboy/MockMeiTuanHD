@@ -16,6 +16,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "MJExtension.h"
 #import "Masonry.h"
+#import "MTDetailDealViewController.h"
+
 @interface MTDealCollectionViewController ()<DPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 /** 最近的一次请求：出现多次请求冲突的时候，响应最近一次请求*/
 @property (nonatomic ,strong)DPRequest  *recentRequest;
@@ -174,6 +176,15 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
     return cell;
 }
 
+#pragma mark - UICollectionViewController delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MTDetailDealViewController *detailController = [[MTDetailDealViewController alloc]init];
+    //必须得先调用view,否则下面的句子将会无效
+    [detailController loadView];
+    detailController.deal = [self.deals objectAtIndex:indexPath.item];
+    [self presentViewController:detailController animated:YES completion:nil];
+}
 
 
 @end
