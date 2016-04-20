@@ -20,4 +20,5 @@
 #define BgColor [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0]
 #define  KNotificationCenter [NSNotificationCenter defaultCenter]
 #define kMTUserDefaults     [NSUserDefaults standardUserDefaults]
+#define kMTCacheDir [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
 #endif /* const_pch */

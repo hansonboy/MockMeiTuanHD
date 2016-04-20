@@ -13,6 +13,10 @@
 		CB316E3D1CC6759B00786947 /* MTDetailDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E3B1CC6759B00786947 /* MTDetailDealViewController.m */; };
 		CB316E3E1CC6759B00786947 /* MTDetailDealViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB316E3C1CC6759B00786947 /* MTDetailDealViewController.xib */; };
 		CB316E411CC721A800786947 /* MTRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E401CC721A800786947 /* MTRestriction.m */; };
+		CB316E431CC7D25700786947 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB316E421CC7D25700786947 /* libsqlite3.0.tbd */; };
+		CB316E461CC7D31B00786947 /* MTCollectDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E451CC7D31B00786947 /* MTCollectDealTool.m */; };
+		CB316E491CC7E4C900786947 /* MTCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E481CC7E4C900786947 /* MTCollectViewController.m */; };
+		CB316E4C1CC7F6A200786947 /* MTBaseDealCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E4B1CC7F6A200786947 /* MTBaseDealCollectionViewController.m */; };
 		CB40ACE51CBD586F000D23B5 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40ACE11CBD586F000D23B5 /* MBProgressHUD+MJ.m */; };
 		CB40ACE61CBD586F000D23B5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB40ACE21CBD586F000D23B5 /* MBProgressHUD.bundle */; };
 		CB40ACE71CBD586F000D23B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40ACE41CBD586F000D23B5 /* MBProgressHUD.m */; };
@@ -97,6 +101,13 @@
 		CB316E3C1CC6759B00786947 /* MTDetailDealViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTDetailDealViewController.xib; sourceTree = "<group>"; };
 		CB316E3F1CC721A800786947 /* MTRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRestriction.h; sourceTree = "<group>"; };
 		CB316E401CC721A800786947 /* MTRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRestriction.m; sourceTree = "<group>"; };
+		CB316E421CC7D25700786947 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CB316E441CC7D31B00786947 /* MTCollectDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCollectDealTool.h; sourceTree = "<group>"; };
+		CB316E451CC7D31B00786947 /* MTCollectDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCollectDealTool.m; sourceTree = "<group>"; };
+		CB316E471CC7E4C900786947 /* MTCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCollectViewController.h; sourceTree = "<group>"; };
+		CB316E481CC7E4C900786947 /* MTCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCollectViewController.m; sourceTree = "<group>"; };
+		CB316E4A1CC7F6A200786947 /* MTBaseDealCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseDealCollectionViewController.h; sourceTree = "<group>"; };
+		CB316E4B1CC7F6A200786947 /* MTBaseDealCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseDealCollectionViewController.m; sourceTree = "<group>"; };
 		CB40ACE01CBD586F000D23B5 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		CB40ACE11CBD586F000D23B5 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		CB40ACE21CBD586F000D23B5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -205,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB316E431CC7D25700786947 /* libsqlite3.0.tbd in Frameworks */,
 				4242C72945224168897AB2EE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +250,7 @@
 		B4315B545E4E4B68E240730C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB316E421CC7D25700786947 /* libsqlite3.0.tbd */,
 				412D1E9302BD278A2BDD8943 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -248,6 +261,8 @@
 			children = (
 				CB0E42201CBA3D5C00F5B86C /* MTMetaTool.h */,
 				CB0E42211CBA3D5C00F5B86C /* MTMetaTool.m */,
+				CB316E441CC7D31B00786947 /* MTCollectDealTool.h */,
+				CB316E451CC7D31B00786947 /* MTCollectDealTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -418,6 +433,8 @@
 				CB80914C1CA974B300B2460B /* MTNavigationController.m */,
 				CB40ACED1CBD5D13000D23B5 /* MTDealCollectionViewController.h */,
 				CB40ACEE1CBD5D13000D23B5 /* MTDealCollectionViewController.m */,
+				CB316E4A1CC7F6A200786947 /* MTBaseDealCollectionViewController.h */,
+				CB316E4B1CC7F6A200786947 /* MTBaseDealCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -529,6 +546,8 @@
 		CB97F3F81CBE85D4009925B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CB316E471CC7E4C900786947 /* MTCollectViewController.h */,
+				CB316E481CC7E4C900786947 /* MTCollectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -617,8 +636,8 @@
 			buildPhases = (
 				C3F22A3B78CA37389F641DBC /* Check Pods Manifest.lock */,
 				CBCFD6D31CA9662D009990C6 /* Sources */,
-				CBCFD6D41CA9662D009990C6 /* Frameworks */,
 				CBCFD6D51CA9662D009990C6 /* Resources */,
+				CBCFD6D41CA9662D009990C6 /* Frameworks */,
 				E660BD96D9CF44BFCA24FA07 /* Embed Pods Frameworks */,
 				7E0C98C6EED2057F2E2A3B9B /* Copy Pods Resources */,
 			);
@@ -807,6 +826,7 @@
 				CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */,
 				CB91FD151CABC4AC00B9E74C /* MTRegionViewController.m in Sources */,
 				CB97CF3B1CBCE769005AF893 /* MTCenterLineLabel.m in Sources */,
+				CB316E491CC7E4C900786947 /* MTCollectViewController.m in Sources */,
 				CB80916E1CA9B4FD00B2460B /* MTCatogeryViewController.m in Sources */,
 				CB0E42221CBA3D5C00F5B86C /* MTMetaTool.m in Sources */,
 				CB8091541CA974B300B2460B /* MTNavigationController.m in Sources */,
@@ -820,8 +840,10 @@
 				CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */,
 				CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */,
 				CB97CF341CBCC280005AF893 /* MTDealCollectionViewCell.m in Sources */,
+				CB316E461CC7D31B00786947 /* MTCollectDealTool.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB97F3F51CBE4548009925B1 /* AwesomeMenu.m in Sources */,
+				CB316E4C1CC7F6A200786947 /* MTBaseDealCollectionViewController.m in Sources */,
 				CBEF6F9C1CC4D0EC001A4D9A /* README.md in Sources */,
 				CB97CF301CBB8530005AF893 /* NSDictionary+Log.m in Sources */,
 				CB40ACE71CBD586F000D23B5 /* MBProgressHUD.m in Sources */,

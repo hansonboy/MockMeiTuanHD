@@ -13,6 +13,8 @@
 #import "DPAPI.h"
 #import "MJExtension.h"
 #import "MTRestriction.h"
+#import "MTCollectDealTool.h"
+#import "MBProgressHUD+MJ.h"
 @interface MTDetailDealViewController ()<UIWebViewDelegate,DPRequestDelegate>
 /**
  *  细节webview
@@ -38,46 +40,57 @@
 @property (weak, nonatomic) IBOutlet UILabel *dealDesc;
 
 @property (nonatomic ,strong)MTDeal *detailDeal;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *acitivyIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
 @implementation MTDetailDealViewController
-//初始化将会先调用该方法
-//???: 这个地方有点意思：self.detailWebView = nil；得回来好好看看
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark - 初始化
+- (void)viewDidLoad
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
-        self.detailWebView.backgroundColor = BgColor;
-    }
-    return  self;
-}
--(void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
+    [super viewDidLoad];
+    self.view.backgroundColor = BgColor;
+
     
-}
--(void)setDeal:(MTDeal *)deal
-{
-    _deal = deal;
-    //???:多线程异步代理回调是在主线程中还是从线程中呢，后面需要好好想下这里
+    //根据数据，设置页面相关的显示
+//边界测试    self.deal.purchase_deadline = @"2016-04-20";
+    [self.remainTime setTitle:[self remainTime:self.deal.purchase_deadline] forState:UIControlStateNormal];
+    [self.soldNumbers setTitle:[NSString stringWithFormat:@"已售%d件",self.deal.purchase_count] forState:UIControlStateNormal];
+    [self.dealImg sd_setImageWithURL:[NSURL URLWithString:self.deal.image_url]];
+    self.dealDesc.text = self.deal.desc;
+    self.dealTitle.text = self.deal.title;
+    
+    self.collect.selected = [MTCollectDealTool isCollected:self.deal];
+//    self.collect.selected = YES;
+    if (self.collect.selected) {
+        JWLog(@"收藏成功");
+    }
     [self loadDetailDeal];
     
     //webview 的loadRequest： 是异步请求
-    
-    NSURLRequest *request =  [NSURLRequest requestWithURL:[NSURL URLWithString:deal.deal_h5_url]];
+    NSURLRequest *request =  [NSURLRequest requestWithURL:[NSURL URLWithString:self.deal.deal_h5_url]];
     [self.detailWebView loadRequest:request];
     self.detailWebView.delegate = self;
     
-    //根据数据，设置页面相关的显示
-    [self.remainTime setTitle:[self remainTime:deal.purchase_deadline] forState:UIControlStateNormal];
-    [self.soldNumbers setTitle:[NSString stringWithFormat:@"已售%d件",deal.purchase_count] forState:UIControlStateNormal];
-    [self.dealImg sd_setImageWithURL:[NSURL URLWithString:deal.image_url]];
-    self.dealDesc.text = deal.desc;
-    self.dealTitle.text = deal.title;
-    
 }
+- (IBAction)collect:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        //1. 收藏数据，将数据保存在数据库中
+        [MTCollectDealTool addDeal:self.detailDeal];
+        [MBProgressHUD showSuccess:@"收藏成功！" toView:self.view];
+    }
+    else
+    {
+        //2. 取消收藏，将数据从数据库中删除
+        [MTCollectDealTool removeDeal:self.detailDeal];
+        [MBProgressHUD showError:@"取消收藏！" toView:self.view];
+    }
+    NSArray *array = [MTCollectDealTool allDeals];
+    JWLog(@"%@",array);
+}
+
+
 - (void)setDetailDeal:(MTDeal *)detailDeal
 {
     _detailDeal = detailDeal;
@@ -87,18 +100,20 @@
 }
 - (NSString *)remainTime:(NSString *)time_t {
     
-        NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-        fmt.dateFormat = @"yyyy-MM-dd";
-        NSDate *deadDate = [fmt dateFromString:time_t];
-        NSDate *date = [NSDate date];
-        NSCalendar *calender = [NSCalendar currentCalendar];
-        NSDateComponents *dateComponents = [calender components:NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:date toDate:deadDate options:0];
-        if (dateComponents.day > 30) {
-            return @"一月后过期";
-        }else
-        {
-            return [NSString stringWithFormat:@"%d天%d小时%d分",dateComponents.day,dateComponents.hour,dateComponents.minute];
-        }
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSDate *deadDate = [fmt dateFromString:time_t];
+    deadDate = [deadDate dateByAddingTimeInterval:24*60*60];
+    NSDate *date = [NSDate date];
+    NSCalendar *calender = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponents = [calender components:NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:date toDate:deadDate options:0];
+    if (dateComponents.day > 30) {
+        return @"一月后过期";
+    }else
+    {
+        return [NSString stringWithFormat:@"%d天%d小时%d分",dateComponents.day,dateComponents.hour,dateComponents.minute];
+    }
     
 }
 #pragma mark - 请求订单详情数据
@@ -160,7 +175,7 @@
                         buynow.parentNode.removeChild(buynow);\
                         "];
         [webView stringByEvaluatingJavaScriptFromString:js];
-        [self.acitivyIndicator stopAnimating];
+        [self.activityIndicator stopAnimating];
     }
 }
 
@@ -185,12 +200,22 @@
 //    }
 //    return self;
 //}
+//初始化将会先调用该方法
+//???: 这个地方有点意思：self.detailWebView = nil；得回来好好看看
 //-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{
-//   if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
-//   {
-//       JWLog(@"");
-//   }
-//    return self;
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//        UIColor *color = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
+//        //self.detailWebView = nil 这时候
+//        self.detailWebView.backgroundColor = color;
+//        JWLog(@"");
+//    }
+//    return  self;
+//}
+////全程都没有调用该方法
+//-(void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    JWLog(@"");
 //}
 @end

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MTDealCollectionViewController : UICollectionViewController
+#import "MTBaseDealCollectionViewController.h"
+@interface MTDealCollectionViewController : MTBaseDealCollectionViewController
 /**父类供子类调用的方法*/
 -(void)setupParams:(NSMutableDictionary *)params;
 @end
