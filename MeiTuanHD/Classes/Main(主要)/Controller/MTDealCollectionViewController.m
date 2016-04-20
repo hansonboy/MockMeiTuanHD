@@ -179,12 +179,12 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
 #pragma mark - UICollectionViewController delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+  
     MTDetailDealViewController *detailController = [[MTDetailDealViewController alloc]init];
     //必须得先调用view,否则下面的句子将会无效
     [detailController loadView];
     detailController.deal = [self.deals objectAtIndex:indexPath.item];
     [self presentViewController:detailController animated:YES completion:nil];
 }
-
 
 @end

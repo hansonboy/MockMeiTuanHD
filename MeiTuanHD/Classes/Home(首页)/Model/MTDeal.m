@@ -8,9 +8,11 @@
 
 #import "MTDeal.h"
 #import "MJExtension.h"
+
 @implementation MTDeal
 +(NSDictionary *)mj_replacedKeyFromPropertyName
 {
     return @{@"desc":@"description"};
 }
+
 @end

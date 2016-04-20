@@ -80,8 +80,9 @@
 		if ([status isEqualToString:@"OK"]) {
 			if ([_delegate respondsToSelector:@selector(request:didFinishLoadingWithResult:)])
 			{
-				[_delegate request:self didFinishLoadingWithResult:(result == nil ? data : result)];
-			}
+                
+                [_delegate request:self didFinishLoadingWithResult:(result == nil ? data : result)];
+            }
 		} else {
 			if ([status isEqualToString:@"ERROR"]) {
 				// TODO: 处理错误代码
