@@ -60,11 +60,13 @@
     self.dealDesc.text = self.deal.desc;
     self.dealTitle.text = self.deal.title;
     
-    self.collect.selected = [MTCollectDealTool isCollected:self.deal];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        BOOL selected  = [MTCollectDealTool isCollected:self.deal];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.collect.selected = selected;
+        });
+    });
 //    self.collect.selected = YES;
-    if (self.collect.selected) {
-        JWLog(@"收藏成功");
-    }
     [self loadDetailDeal];
     
     //webview 的loadRequest： 是异步请求
@@ -86,8 +88,7 @@
         [MTCollectDealTool removeDeal:self.detailDeal];
         [MBProgressHUD showError:@"取消收藏！" toView:self.view];
     }
-    NSArray *array = [MTCollectDealTool allDeals];
-    JWLog(@"%@",array);
+ 
 }
 
 
@@ -146,13 +147,13 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     
-    JWLog(@"%@,%d",request,navigationType);
+  
     return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    JWLog(@"%@",[NSThread currentThread]);
+    
     //内部自动进行了跳转逻辑，当第二次访问的时候返回了我们想要的结果
     if (![webView.request.URL.absoluteString isEqualToString:self.deal.deal_url]) {
         

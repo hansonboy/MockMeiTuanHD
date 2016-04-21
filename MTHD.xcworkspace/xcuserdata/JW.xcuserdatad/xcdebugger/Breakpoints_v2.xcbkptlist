@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
-            timestampString = "482862226.140109"
+            timestampString = "482921487.144799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "+addDeal:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
-            timestampString = "482867705.655024"
+            timestampString = "482916314.404441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-webViewDidFinishLoad:"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
-            timestampString = "482866153.902539"
+            timestampString = "482921487.144799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "+isCollected:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
-            timestampString = "482866153.902539"
+            timestampString = "482921487.144799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "+isCollected:"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,27 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
-            timestampString = "482867705.655024"
+            timestampString = "482916314.404441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
-            timestampString = "482867705.655024"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
-            timestampString = "482866613.452254"
+            timestampString = "482921487.144799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "+isCollected:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,28 +164,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
-            timestampString = "482867705.655024"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-collect:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
-            timestampString = "482867705.655024"
+            timestampString = "482916314.404441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "-collect:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeiTuanHD/Classes/Detail(&#x8be6;&#x60c5;)/Controller/MTDetailDealViewController.m"
+            timestampString = "482916314.404441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-collect:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
+            timestampString = "482921482.645111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "+pageCount"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Tool/MTCollectDealTool.m"
+            timestampString = "482921487.78072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "+loadDealsByPage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

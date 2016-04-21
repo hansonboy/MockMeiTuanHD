@@ -10,9 +10,12 @@
 #import "MTDeal.h"
 
 @interface MTCollectDealTool : NSObject
++ (NSInteger)pageCount;
++ (NSArray *)loadDealsByPage:(NSInteger)page;
 + (NSArray *)allDeals;
 + (BOOL)addDeal:(MTDeal *)deal;
 + (BOOL)removeDeal:(MTDeal *)deal;
 + (BOOL)isCollected:(MTDeal *)deal;
 + (BOOL)clearDeals;
++ (void)test;
 @end

@@ -12,6 +12,7 @@
 
 @end
 static FMDatabase *dealDataBase;
+static const NSInteger countPerPage = 6;
 @implementation MTCollectDealTool
 +(void)initialize
 {
@@ -27,6 +28,25 @@ static FMDatabase *dealDataBase;
             JWLog(@"创建表失败：%@",[dealDataBase lastErrorMessage]);
         }
     }
+}
++ (NSInteger)pageCount
+{
+    FMResultSet *rs = [dealDataBase executeQueryWithFormat:@"select count(*) as count_collect  from collect;"];
+    [rs next];
+    return ([rs intForColumn:@"count_collect"]+countPerPage-1)/countPerPage;
+}
++ (NSArray *)loadDealsByPage:(NSInteger)page
+{
+    if (page > [self pageCount]) return nil;
+    NSMutableArray *result = [NSMutableArray array];
+    FMResultSet *rs = [dealDataBase executeQueryWithFormat:@"select * from collect limit %d,%d;",(page-1)*countPerPage,countPerPage];
+    while (rs.next) {
+        NSData *data = [rs objectForColumnName:@"deal"];
+        MTDeal *deal = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [result addObject:deal];
+    }
+    return  result;
+
 }
 +(NSArray *)allDeals
 {
@@ -71,5 +91,19 @@ static FMDatabase *dealDataBase;
         return false;
     }
     return true;
+}
+
++ (void)test
+{
+    NSArray *array = [self allDeals];
+    NSInteger pageCount = [self pageCount];
+    if ((array.count+countPerPage-1)/countPerPage != pageCount) {
+        JWLog(@"两次结果不一致");
+    }
+    for (int i = 0 ; i < pageCount; i++) {
+        NSArray *array1 = [self loadDealsByPage:i];
+        JWLog(@"%@",array1 );
+    }
+
 }
 @end

@@ -17,6 +17,7 @@
 #define JWLog(xx, ...)
 #endif
 #include "const.h"
+#define MTColor(a,b,c) [UIColor colorWithRed:(a)/255.0 green:(b)/255.0 blue:(c)/255.0 alpha:1.0]
 #define BgColor [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0]
 #define  KNotificationCenter [NSNotificationCenter defaultCenter]
 #define kMTUserDefaults     [NSUserDefaults standardUserDefaults]

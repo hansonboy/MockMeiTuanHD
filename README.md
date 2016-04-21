@@ -75,7 +75,22 @@
 12. 详情界面和收藏界面进行数据传递
 13. 收藏的数据进行上拉刷新
 14. 尾部控件的显示和收藏放在nubmerOfInSection：中实现
+###第五天
+2. 蒙版遮盖：使用button来做
+6. 打钩的复用，遮盖的复用 
+7. 全选，全不选，删除按钮显示可用和不用
+8. 最近浏览：类似于收藏
+9. 第三方分享：ShareSDK,UMSDK
+9. 第三方支付：银联支付，支付宝支付
+10. 返回一个遵守协议的对象
+12. 地图功能
 
+#知识点
+1. 可以取得所有能看到的cell，visibleCells 
+5. 由于cell重用，如果想要不出差错，那么应该从模型入手 
+6. 通过提供bool或者方法给接口，而不暴露具体的属性 
+7. 分享：ShareSDK,YoumengSDK,分享到新浪微博
+8. 应用程序之间互相调用，传参  
 ###开发过程中约到的一些问题和知识点
 1.	pch 的添加： 在build setting 中搜索 prefix header，添加/path/to/yourPch.pch
 1.  当设置使用了popverController的contentViewController 设置了autolayout 的时候，在显示的时候发现控件不显示，原因可能是因为自动伸缩变化	
