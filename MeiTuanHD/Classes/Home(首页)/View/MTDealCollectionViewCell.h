@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MTDealCollectionViewCell;
+@protocol MTDealCollectionViewCellDelegate<NSObject>
+@optional
+- (void)dealCollectionViewCellDidSelectOrNot:(MTDealCollectionViewCell *)cell;
+@end
 @class MTDeal;
 @interface MTDealCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic ,assign)id<MTDealCollectionViewCellDelegate> delegate;
 @property (nonatomic ,strong)MTDeal *deal;
 
 @end

@@ -88,6 +88,20 @@
                             <constraint firstAttribute="width" constant="38" id="NOD-Sd-69d"/>
                         </constraints>
                     </imageView>
+                    <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ik-mM-lkk" userLabel="Cover">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="didClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="xoo-ZL-C47"/>
+                        </connections>
+                    </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choosed" translatesAutoresizingMaskIntoConstraints="NO" id="FMh-Nr-cU4" userLabel="select">
+                        <rect key="frame" x="274" y="274" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="fGx-5g-6c4"/>
+                            <constraint firstAttribute="height" constant="26" id="mEy-Jk-i58"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -95,8 +109,12 @@
                 <constraint firstAttribute="trailing" secondItem="km8-57-rsl" secondAttribute="trailing" id="0y3-ED-83P"/>
                 <constraint firstItem="iDf-dW-kg6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1nn-sw-I8a"/>
                 <constraint firstAttribute="bottom" secondItem="8gT-cb-8V7" secondAttribute="bottom" id="5YS-fZ-S8e"/>
+                <constraint firstAttribute="bottom" secondItem="0Ik-mM-lkk" secondAttribute="bottom" id="7lX-XZ-9EB"/>
+                <constraint firstItem="0Ik-mM-lkk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J7g-DK-STQ"/>
                 <constraint firstAttribute="trailing" secondItem="q3X-cr-wg4" secondAttribute="trailing" constant="5" id="Jh6-aR-pbX"/>
                 <constraint firstItem="km8-57-rsl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LFa-JG-4VT"/>
+                <constraint firstAttribute="trailing" secondItem="0Ik-mM-lkk" secondAttribute="trailing" id="ML5-oR-Vcz"/>
+                <constraint firstAttribute="bottom" secondItem="FMh-Nr-cU4" secondAttribute="bottom" id="OVH-i1-F1O"/>
                 <constraint firstItem="km8-57-rsl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VRI-JE-Pin"/>
                 <constraint firstItem="8gT-cb-8V7" firstAttribute="top" secondItem="q3X-cr-wg4" secondAttribute="bottom" constant="5" id="Xsn-yk-0mH"/>
                 <constraint firstAttribute="bottom" secondItem="km8-57-rsl" secondAttribute="bottom" id="aB6-m1-dbd"/>
@@ -104,6 +122,8 @@
                 <constraint firstAttribute="trailing" secondItem="8gT-cb-8V7" secondAttribute="trailing" constant="5" id="egK-HW-SDe"/>
                 <constraint firstItem="8gT-cb-8V7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="gHW-5r-cn9"/>
                 <constraint firstItem="q3X-cr-wg4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="n4S-uQ-lFW"/>
+                <constraint firstAttribute="trailing" secondItem="FMh-Nr-cU4" secondAttribute="trailing" id="u2r-4o-rLk"/>
+                <constraint firstItem="0Ik-mM-lkk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="v1D-dg-AEc"/>
                 <constraint firstItem="q3X-cr-wg4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="yaD-4L-sxG"/>
             </constraints>
             <size key="customSize" width="364" height="227"/>
@@ -115,12 +135,15 @@
                 <outlet property="dealNew" destination="iDf-dW-kg6" id="3fN-4J-gpu"/>
                 <outlet property="dealPrimativePrice" destination="Ekw-Zb-dw2" id="qke-w0-lGt"/>
                 <outlet property="dealTitle" destination="eQy-sW-iNy" id="EJx-UW-q5G"/>
+                <outlet property="isEditing" destination="0Ik-mM-lkk" id="z8L-BR-chd"/>
+                <outlet property="isSelectedImageView" destination="FMh-Nr-cU4" id="LLO-df-g9A"/>
             </connections>
             <point key="canvasLocation" x="919" y="455"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="bg_dealcell" width="10" height="10"/>
+        <image name="ic_choosed" width="26" height="26"/>
         <image name="ic_deal_new" width="38" height="24"/>
         <image name="placeholder_deal" width="273" height="172"/>
     </resources>

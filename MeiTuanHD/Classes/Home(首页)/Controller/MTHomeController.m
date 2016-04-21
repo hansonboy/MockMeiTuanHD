@@ -28,6 +28,7 @@
 #import "AwesomeMenu.h"
 #import "Masonry.h"
 #import "MTCollectViewController.h"
+#import "MTCollectDealTool.h"
 
 @interface MTHomeController()<AwesomeMenuDelegate>
 /**
@@ -335,7 +336,7 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 {
      switch (idx) {
         case 0:{//收藏
-            
+
             menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
             MTCollectViewController *collect = [[MTCollectViewController alloc]init];
             MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:collect];

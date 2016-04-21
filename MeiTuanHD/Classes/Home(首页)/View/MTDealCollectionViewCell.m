@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *dealPrimativePrice;
 @property (weak, nonatomic) IBOutlet UILabel *dealCount;
 @property (weak, nonatomic) IBOutlet UIImageView *dealNew;
+/**是否正在编辑*/
+@property (weak, nonatomic) IBOutlet UIButton *isEditing;
+/**是否被选中*/
+@property (weak, nonatomic) IBOutlet UIImageView *isSelectedImageView;
+
 @end
 @implementation MTDealCollectionViewCell
 -(instancetype)init
@@ -42,5 +47,18 @@
     }else{
         self.dealNew.hidden = YES;
     }
+    
+    self.isEditing.hidden = !self.deal.isEditing;
+    self.isSelectedImageView.hidden = !self.deal.isSelected;
 }
+
+- (IBAction)didClick{
+    self.isSelectedImageView.hidden = !self.isSelectedImageView.hidden;
+    self.deal.selected = !self.deal.selected;
+    JWLog(@"%@",self.deal);
+    if ([self.delegate respondsToSelector:@selector(dealCollectionViewCellDidSelectOrNot:)]) {
+        [self.delegate dealCollectionViewCellDidSelectOrNot:self];
+    }
+}
+
 @end

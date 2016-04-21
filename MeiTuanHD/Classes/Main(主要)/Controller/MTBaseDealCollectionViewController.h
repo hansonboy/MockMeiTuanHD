@@ -13,4 +13,5 @@
 @property (nonatomic ,strong)UIImageView *noDataView;
 /** 当前的团购订单数组*/
 @property (nonatomic ,strong)NSMutableArray *deals;
+
 @end

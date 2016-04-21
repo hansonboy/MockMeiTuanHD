@@ -50,6 +50,7 @@ static NSString *const identificer = @"MTDealCollectionViewCell";
         
         [self.collectionView registerNib:[UINib nibWithNibName:@"MTDealCollectionViewCell" bundle:[NSBundle mainBundle]]forCellWithReuseIdentifier:identificer];
         self.collectionView.alwaysBounceVertical = YES;
+        
     }
     return self;
 }

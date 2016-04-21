@@ -35,6 +35,11 @@
 @property (nonatomic ,copy) NSString *deal_h5_url;
 /**团购限制条件*/
 @property (nonatomic ,strong)MTRestriction *restrictions;
+/**是否编辑状态*/
+@property (nonatomic ,assign,getter=isEditing)BOOL editing;
+/**是否被选中*/
+@property (nonatomic ,assign,getter=isSelected)BOOL selected;
+
 //city	string	城市名称，city为＂全国＂表示全国单，其他为本地单，城市范围见相关API返回结果
 //regions	list	团购适用商户所在行政区
 //categories	list	团购所属分类
