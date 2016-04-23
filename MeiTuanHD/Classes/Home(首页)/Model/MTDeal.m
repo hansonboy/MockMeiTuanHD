@@ -8,11 +8,16 @@
 
 #import "MTDeal.h"
 #import "MJExtension.h"
+#import "MTBusiness.h"
 
 @implementation MTDeal
 +(NSDictionary *)mj_replacedKeyFromPropertyName
 {
     return @{@"desc":@"description"};
+}
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{@"businesses":@"MTBusiness"};
 }
 MJCodingImplementation
 - (BOOL)isEqual:(MTDeal *)object

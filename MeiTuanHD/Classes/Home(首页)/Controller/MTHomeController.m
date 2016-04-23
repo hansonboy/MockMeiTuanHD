@@ -29,6 +29,7 @@
 #import "Masonry.h"
 #import "MTCollectViewController.h"
 #import "MTCollectDealTool.h"
+#import "MTMapViewController.h"
 
 @interface MTHomeController()<AwesomeMenuDelegate>
 /**
@@ -145,7 +146,8 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
     MTHomeTopItem * category = [[MTHomeTopItem alloc]init];
     [category setTitle:@"美团"];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
-    [category addTarget:self action:@selector(changeCategory)];      self.categoryItem = categoryItem;
+    [category addTarget:self action:@selector(changeCategory)];
+    self.categoryItem = categoryItem;
     
     //3.地区
     MTHomeTopItem * city = [[MTHomeTopItem alloc]init];
@@ -276,8 +278,11 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:searchCVC];
       [self presentViewController:navi animated:YES completion:nil];
 }
+
+//地图搜索
 -(void)location:(id)sender{
-      JWLog(@"");
+    MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:[[MTMapViewController alloc]init]];
+    [self presentViewController:navi animated:YES completion:nil];
 }
 -(void)sort{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
@@ -361,7 +366,6 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 -(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu
 {
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
-
 }
 
 @end

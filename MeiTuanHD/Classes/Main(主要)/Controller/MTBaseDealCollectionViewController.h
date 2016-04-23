@@ -4,7 +4,7 @@
 //
 //  Created by wangjianwei on 16/4/21.
 //  Copyright © 2016年 JW. All rights reserved.
-//
+//  只负责显示数据的collectionViewController类
 
 #import <UIKit/UIKit.h>
 

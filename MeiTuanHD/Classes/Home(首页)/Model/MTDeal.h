@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MTBusiness.h"
 @class MTRestriction;
 @interface MTDeal : NSObject
 /**团购单ID*/
@@ -39,6 +40,8 @@
 @property (nonatomic ,assign,getter=isEditing)BOOL editing;
 /**是否被选中*/
 @property (nonatomic ,assign,getter=isSelected)BOOL selected;
+/**商户信息*/
+@property (nonatomic ,strong)NSArray *businesses;
 
 //city	string	城市名称，city为＂全国＂表示全国单，其他为本地单，城市范围见相关API返回结果
 //regions	list	团购适用商户所在行政区

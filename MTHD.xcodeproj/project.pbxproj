@@ -17,6 +17,10 @@
 		CB316E461CC7D31B00786947 /* MTCollectDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E451CC7D31B00786947 /* MTCollectDealTool.m */; };
 		CB316E491CC7E4C900786947 /* MTCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E481CC7E4C900786947 /* MTCollectViewController.m */; };
 		CB316E4C1CC7F6A200786947 /* MTBaseDealCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E4B1CC7F6A200786947 /* MTBaseDealCollectionViewController.m */; };
+		CB316E511CC93BD700786947 /* MTHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E501CC93BD600786947 /* MTHttpTool.m */; };
+		CB316E571CC9E68000786947 /* MTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB316E551CC9E68000786947 /* MTMapViewController.m */; };
+		CB316E581CC9E68000786947 /* MTMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB316E561CC9E68000786947 /* MTMapViewController.xib */; };
+		CB316E5A1CC9F00300786947 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB316E591CC9F00300786947 /* MapKit.framework */; };
 		CB40ACE51CBD586F000D23B5 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40ACE11CBD586F000D23B5 /* MBProgressHUD+MJ.m */; };
 		CB40ACE61CBD586F000D23B5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB40ACE21CBD586F000D23B5 /* MBProgressHUD.bundle */; };
 		CB40ACE71CBD586F000D23B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40ACE41CBD586F000D23B5 /* MBProgressHUD.m */; };
@@ -62,6 +66,9 @@
 		CB97F3F61CBE4548009925B1 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB97F3F41CBE4548009925B1 /* AwesomeMenuItem.m */; };
 		CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */; };
 		CBAC4EEF1CBABE3700BDCA1B /* MTSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */; };
+		CBBC528D1CCA0F9C003DD718 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBC528C1CCA0F9C003DD718 /* CoreLocation.framework */; };
+		CBBC52951CCA647C003DD718 /* MTBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC52941CCA647C003DD718 /* MTBusiness.m */; };
+		CBBC52981CCA7C10003DD718 /* MTBusinessAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC52971CCA7C10003DD718 /* MTBusinessAnnotation.m */; };
 		CBC494E01CB951BF0067F178 /* MTDropDownViewMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */; };
 		CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC494E21CB9530C0067F178 /* MTDropDownViewDetailCell.m */; };
 		CBCFD6E71CA9662D009990C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFD6E61CA9662D009990C6 /* Assets.xcassets */; };
@@ -108,6 +115,12 @@
 		CB316E481CC7E4C900786947 /* MTCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCollectViewController.m; sourceTree = "<group>"; };
 		CB316E4A1CC7F6A200786947 /* MTBaseDealCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseDealCollectionViewController.h; sourceTree = "<group>"; };
 		CB316E4B1CC7F6A200786947 /* MTBaseDealCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseDealCollectionViewController.m; sourceTree = "<group>"; };
+		CB316E4F1CC93BD600786947 /* MTHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHttpTool.h; sourceTree = "<group>"; };
+		CB316E501CC93BD600786947 /* MTHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHttpTool.m; sourceTree = "<group>"; };
+		CB316E541CC9E68000786947 /* MTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapViewController.h; sourceTree = "<group>"; };
+		CB316E551CC9E68000786947 /* MTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMapViewController.m; sourceTree = "<group>"; };
+		CB316E561CC9E68000786947 /* MTMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTMapViewController.xib; sourceTree = "<group>"; };
+		CB316E591CC9F00300786947 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB40ACE01CBD586F000D23B5 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		CB40ACE11CBD586F000D23B5 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		CB40ACE21CBD586F000D23B5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -190,6 +203,11 @@
 		CBAC4EEB1CBABD4400BDCA1B /* MTSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSort.m; sourceTree = "<group>"; };
 		CBAC4EED1CBABE3700BDCA1B /* MTSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSortViewController.h; sourceTree = "<group>"; };
 		CBAC4EEE1CBABE3700BDCA1B /* MTSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSortViewController.m; sourceTree = "<group>"; };
+		CBBC528C1CCA0F9C003DD718 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CBBC52931CCA647C003DD718 /* MTBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBusiness.h; sourceTree = "<group>"; };
+		CBBC52941CCA647C003DD718 /* MTBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBusiness.m; sourceTree = "<group>"; };
+		CBBC52961CCA7C10003DD718 /* MTBusinessAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBusinessAnnotation.h; sourceTree = "<group>"; };
+		CBBC52971CCA7C10003DD718 /* MTBusinessAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBusinessAnnotation.m; sourceTree = "<group>"; };
 		CBC494DE1CB951BF0067F178 /* MTDropDownViewMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewMasterCell.h; sourceTree = "<group>"; };
 		CBC494DF1CB951BF0067F178 /* MTDropDownViewMasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDropDownViewMasterCell.m; sourceTree = "<group>"; };
 		CBC494E11CB9530C0067F178 /* MTDropDownViewDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDropDownViewDetailCell.h; sourceTree = "<group>"; };
@@ -216,6 +234,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBC528D1CCA0F9C003DD718 /* CoreLocation.framework in Frameworks */,
+				CB316E5A1CC9F00300786947 /* MapKit.framework in Frameworks */,
 				CB316E431CC7D25700786947 /* libsqlite3.0.tbd in Frameworks */,
 				4242C72945224168897AB2EE /* libPods.a in Frameworks */,
 			);
@@ -250,6 +270,8 @@
 		B4315B545E4E4B68E240730C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBBC528C1CCA0F9C003DD718 /* CoreLocation.framework */,
+				CB316E591CC9F00300786947 /* MapKit.framework */,
 				CB316E421CC7D25700786947 /* libsqlite3.0.tbd */,
 				412D1E9302BD278A2BDD8943 /* libPods.a */,
 			);
@@ -281,6 +303,34 @@
 				CB316E3A1CC6759B00786947 /* MTDetailDealViewController.h */,
 				CB316E3B1CC6759B00786947 /* MTDetailDealViewController.m */,
 				CB316E3C1CC6759B00786947 /* MTDetailDealViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB316E4E1CC93BB800786947 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CB316E4F1CC93BD600786947 /* MTHttpTool.h */,
+				CB316E501CC93BD600786947 /* MTHttpTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CB316E521CC9E65B00786947 /* Map(地图) */ = {
+			isa = PBXGroup;
+			children = (
+				CBBC52921CCA642C003DD718 /* Model */,
+				CB316E531CC9E65B00786947 /* Controller */,
+			);
+			path = "Map(地图)";
+			sourceTree = "<group>";
+		};
+		CB316E531CC9E65B00786947 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB316E541CC9E68000786947 /* MTMapViewController.h */,
+				CB316E551CC9E68000786947 /* MTMapViewController.m */,
+				CB316E561CC9E68000786947 /* MTMapViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,6 +378,7 @@
 		CB8091421CA974B300B2460B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CB316E521CC9E65B00786947 /* Map(地图) */,
 				CB316E381CC6759B00786947 /* Detail(详情) */,
 				CB97F3F91CBE85E3009925B1 /* RecentSee(最近浏览) */,
 				CB97F3F71CBE85D4009925B1 /* Collect(收藏) */,
@@ -416,6 +467,7 @@
 		CB8091491CA974B300B2460B /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				CB316E4E1CC93BB800786947 /* Tool */,
 				CB97CEF21CBB7343005AF893 /* Lib */,
 				CB8091571CA9801100B2460B /* Category */,
 				CB80914A1CA974B300B2460B /* Controller */,
@@ -565,6 +617,17 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CBBC52921CCA642C003DD718 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBBC52931CCA647C003DD718 /* MTBusiness.h */,
+				CBBC52941CCA647C003DD718 /* MTBusiness.m */,
+				CBBC52961CCA7C10003DD718 /* MTBusinessAnnotation.h */,
+				CBBC52971CCA7C10003DD718 /* MTBusinessAnnotation.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CBCFD6CE1CA9662D009990C6 = {
@@ -737,6 +800,7 @@
 				CB8090A91CA9723500B2460B /* cities.plist in Resources */,
 				CB97CF351CBCC280005AF893 /* MTDealCollectionViewCell.xib in Resources */,
 				CB8090A81CA9723500B2460B /* categories.plist in Resources */,
+				CB316E581CC9E68000786947 /* MTMapViewController.xib in Resources */,
 				CB316E3E1CC6759B00786947 /* MTDetailDealViewController.xib in Resources */,
 				CB40ACE61CBD586F000D23B5 /* MBProgressHUD.bundle in Resources */,
 				CB91FD1E1CABCE5800B9E74C /* MTRegionViewController.xib in Resources */,
@@ -823,6 +887,7 @@
 				CB97CF2A1CBB7B0F005AF893 /* SBJsonWriter.m in Sources */,
 				CB80915D1CA9801100B2460B /* UIView+Extension.m in Sources */,
 				CB8091691CA9B25200B2460B /* MTDropDownView.m in Sources */,
+				CB316E571CC9E68000786947 /* MTMapViewController.m in Sources */,
 				CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */,
 				CB91FD151CABC4AC00B9E74C /* MTRegionViewController.m in Sources */,
 				CB97CF3B1CBCE769005AF893 /* MTCenterLineLabel.m in Sources */,
@@ -834,12 +899,14 @@
 				CB8091531CA974B300B2460B /* MTHomeController.m in Sources */,
 				CB0E42251CBA6FCE00F5B86C /* MTSearchResultTVC.m in Sources */,
 				CB97CF151CBB7AED005AF893 /* DPAPI.m in Sources */,
+				CBBC52981CCA7C10003DD718 /* MTBusinessAnnotation.m in Sources */,
 				CB97CF381CBCC4E2005AF893 /* MTDeal.m in Sources */,
 				CB97CF261CBB7B0F005AF893 /* NSString+SBJSON.m in Sources */,
 				CB97CF251CBB7B0F005AF893 /* NSObject+SBJSON.m in Sources */,
 				CBAC4EEC1CBABD4400BDCA1B /* MTSort.m in Sources */,
 				CBC494E31CB9530C0067F178 /* MTDropDownViewDetailCell.m in Sources */,
 				CB97CF341CBCC280005AF893 /* MTDealCollectionViewCell.m in Sources */,
+				CB316E511CC93BD700786947 /* MTHttpTool.m in Sources */,
 				CB316E461CC7D31B00786947 /* MTCollectDealTool.m in Sources */,
 				CB8091561CA974B300B2460B /* main.m in Sources */,
 				CB97F3F51CBE4548009925B1 /* AwesomeMenu.m in Sources */,
@@ -856,6 +923,7 @@
 				CB97CF291CBB7B0F005AF893 /* SBJsonParser.m in Sources */,
 				CB40ACEF1CBD5D13000D23B5 /* MTDealCollectionViewController.m in Sources */,
 				CB8091601CA9830B00B2460B /* const.m in Sources */,
+				CBBC52951CCA647C003DD718 /* MTBusiness.m in Sources */,
 				CB97CF161CBB7AED005AF893 /* DPRequest.m in Sources */,
 				CB316E3D1CC6759B00786947 /* MTDetailDealViewController.m in Sources */,
 				CB316E411CC721A800786947 /* MTRestriction.m in Sources */,

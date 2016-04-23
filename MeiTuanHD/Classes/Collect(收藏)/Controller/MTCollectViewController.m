@@ -19,6 +19,7 @@
 @property(nonatomic, strong) UIBarButtonItem *deleteItem;
 @property(nonatomic, strong) UIBarButtonItem *backItem;
 @property(nonatomic, assign) NSInteger currentPage;
+
 @end
 static const CGFloat kMTBarItemWidth = 100;
 @implementation MTCollectViewController
