@@ -10,90 +10,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
+            timestampString = "483194661.771695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "-mapView:viewForAnnotation:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "-mapView:viewForAnnotation:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "-mapView:regionDidChangeAnimated:"
-            landmarkType = "5">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "mapView"
+            landmarkType = "19">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__55-[MTMapViewController mapView:regionDidChangeAnimated:]_block_invoke"
+                  symbolName = "-[MTMapViewController mapView]"
                   moduleName = "MTHD"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JW/Github/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B/MeiTuanHD/MeiTuanHD/Classes/Map(%E5%9C%B0%E5%9B%BE)/Controller/MTMapViewController.m"
-                  timestampString = "483102919.754479"
+                  timestampString = "483194661.774786"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "1704">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_191"
+                  symbolName = "-[MTMapViewController setMapView:]"
                   moduleName = "MTHD"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JW/Github/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B/MeiTuanHD/MeiTuanHD/Classes/Map(%E5%9C%B0%E5%9B%BE)/Controller/MTMapViewController.m"
-                  timestampString = "483102919.754646"
+                  timestampString = "483194661.775025"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_192"
-                  moduleName = "MTHD"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/JW/Github/%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B/MeiTuanHD/MeiTuanHD/Classes/Map(%E5%9C%B0%E5%9B%BE)/Controller/MTMapViewController.m"
-                  timestampString = "483102919.75479"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "14">
+                  offsetFromSymbolStart = "31">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -104,77 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "-mapView:regionDidChangeAnimated:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "-touchesBegan:withEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Map(&#x5730;&#x56fe;)/Controller/MTMapViewController.m"
-            timestampString = "483103933.494801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-mapView:regionDidChangeAnimated:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "483103295.105521"
+            timestampString = "483202932.598501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
-            landmarkName = "-setupAwesomeMenu"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeiTuanHD/Classes/Home(&#x9996;&#x9875;)/Controller/MTHomeController.m"
-            timestampString = "483103499.709401"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
-            landmarkName = "-awesomeMenu:didSelectIndex:"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "-updateRegionItem:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

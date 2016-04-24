@@ -7,7 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "MTMetaTool.h"
+#import "MTCategory.h"
 @interface MeiTuanHDTests : XCTestCase
 
 @end
@@ -28,7 +29,15 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
-
+- (void)testMetaToolCategoryByName {
+    MTCategory *category = [MTMetaTool categoryByName:@"美食"];
+    XCTAssertTrue([category.map_icon isEqualToString:@"ic_category_1"]);
+}
+- (void)testStringIsEqual {
+    NSString *str = [NSString stringWithFormat:@"is"];
+    XCTAssertTrue([@"is" isEqualToString:str]);
+    XCTAssertFalse([str isEqual:@"str"]);
+}
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

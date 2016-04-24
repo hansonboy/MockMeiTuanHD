@@ -42,10 +42,11 @@
 @property (nonatomic ,assign,getter=isSelected)BOOL selected;
 /**商户信息*/
 @property (nonatomic ,strong)NSArray *businesses;
+/**团购所属分类*/
+@property (nonatomic ,strong)NSArray *categories;
 
 //city	string	城市名称，city为＂全国＂表示全国单，其他为本地单，城市范围见相关API返回结果
-//regions	list	团购适用商户所在行政区
-//categories	list	团购所属分类
+
 //distance	int	团购单所适用商户中距离参数坐标点最近的一家与坐标点的距离，单位为米；如不传入经纬度坐标，结果为-1；如团购单无关联商户，结果为MAXINT
 //commission_ratio	float	当前团单的佣金比例
 //businesses	list	团购所适用的商户列表

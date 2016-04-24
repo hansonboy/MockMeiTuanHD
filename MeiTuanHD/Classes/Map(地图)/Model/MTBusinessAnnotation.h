@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-@class MTDeal;
+
 @interface MTBusinessAnnotation : NSObject<MKAnnotation>
 
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic,assign) CLLocationCoordinate2D coordinate;
 // Title and subtitle for use by selection UI.
-@property (nonatomic, readonly, copy, nullable) NSString *title;
-@property (nonatomic, readonly, copy, nullable) NSString *subtitle;
-
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
-- (void)setTitle:(NSString * _Nullable)title;
-- (void)setSubtitle:(NSString * _Nullable)subtitle;
-
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *icon;
 @end

@@ -10,22 +10,12 @@
 #import "MTBusinessAnnotation.h"
 
 @implementation MTBusinessAnnotation
+//-(NSString *)description
+//{
+//    return [NSString stringWithFormat:@"%@-%@-%p",self.title,self.subtitle,self];
+//}
+- (BOOL)isEqual:(MTBusinessAnnotation *)object {
 
-- (void)setTitle:(NSString *)title
-{
-    _title = [title copy];
-}
-
-- (void)setSubtitle:(NSString *)subtitle {
-    _subtitle = [subtitle copy];
-}
-
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
-{
-    _coordinate = newCoordinate;
-}
-- (BOOL)isEqual:(MTBusinessAnnotation *)object
-{
-    return [_title isEqualToString: object.title];
+    return [self.title isEqualToString:object.title];
 }
 @end

@@ -77,6 +77,7 @@
 		CBEF6F9C1CC4D0EC001A4D9A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CBEF6F9B1CC4D0EC001A4D9A /* README.md */; };
 		CBF0DA961CAC41EE00362004 /* MTCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA951CAC41EE00362004 /* MTCityGroup.m */; };
 		CBF0DA991CAC42EF00362004 /* MTCity.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DA981CAC42EF00362004 /* MTCity.m */; };
+		CBF4CFB71CCC5F9900737072 /* MTHttpToolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF4CFB61CCC5F9900737072 /* MTHttpToolTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 		CBF0DA951CAC41EE00362004 /* MTCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCityGroup.m; sourceTree = "<group>"; };
 		CBF0DA971CAC42EF00362004 /* MTCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCity.h; sourceTree = "<group>"; };
 		CBF0DA981CAC42EF00362004 /* MTCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCity.m; sourceTree = "<group>"; };
+		CBF4CFB61CCC5F9900737072 /* MTHttpToolTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHttpToolTest.m; sourceTree = "<group>"; };
 		F0A03CCE52D427BF89F2EFE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -677,6 +679,7 @@
 			children = (
 				CBCFD6F41CA9662D009990C6 /* MeiTuanHDTests.m */,
 				CBCFD6F61CA9662D009990C6 /* Info.plist */,
+				CBF4CFB61CCC5F9900737072 /* MTHttpToolTest.m */,
 			);
 			path = MeiTuanHDTests;
 			sourceTree = "<group>";
@@ -940,6 +943,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF4CFB71CCC5F9900737072 /* MTHttpToolTest.m in Sources */,
 				CBCFD6F51CA9662D009990C6 /* MeiTuanHDTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1060,7 +1064,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "MeiTuanHD/Classes/Main(主要)/Other/const.pch";
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
 				PRODUCT_NAME = MTHD;
@@ -1078,7 +1082,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "MeiTuanHD/Classes/Main(主要)/Other/const.pch";
 				INFOPLIST_FILE = MeiTuanHD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JW.MeiTuanHD;
 				PRODUCT_NAME = MTHD;

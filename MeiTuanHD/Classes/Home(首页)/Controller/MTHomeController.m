@@ -61,6 +61,7 @@
 /** 当前选中的排序规则*/
 @property (nonatomic ,assign)NSInteger selectedSortIndex;
 
+
 @end
 
 static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
@@ -84,18 +85,14 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //检查是否有选中的城市，如果没有提醒进行选择
-    if(self.selectedCityIndex == 0)
-    {
-        //显示改变城市的控制器
-        //TODO: object 必须为nil，因为我调用的方法会将object dismiss掉
-        [KNotificationCenter postNotificationName:kMTCityWillChangeNotification object:nil];
-    }
-    else
-    {
-        [KNotificationCenter postNotificationName:kMTCityDidChangedNotification object:nil userInfo:@{kMTCityIndexUserInfoKey:@(self.selectedCityIndex)}];
-        [self.collectionView.mj_header beginRefreshing];
-    }
+    [KNotificationCenter addObserver:self selector:@selector(updateCategoryItem:) name:kMTCategoryDidChangedNotification object:nil];
+    //加载数据，且只在第一次进入的时候自动加载
+    [self notifySetupCity];
+}
+
+- (void)viewWillDisappear:(BOOL)animated   {
+    [super viewWillDisappear:animated];
+    [KNotificationCenter removeObserver:self name:kMTCategoryDidChangedNotification object:nil];
 }
 #pragma mark - 实现父类交给子类的方法
 -(void)setupParams:(NSMutableDictionary *)params
@@ -130,15 +127,29 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
     [self setupRightBarBtnItem];
     [self setupLeftBarBtnItem];
     [self addNotification];
-    
     //设置默认的选中的排序类别
      self.selectedSortIndex = 1;
 //    //设置默认的选中的城市
     //初始化为-1，防止每次都从本地读取文件
     [self setupAwesomeMenu];
     
+    
+    
 }
-
+- (void)notifySetupCity {
+    //检查是否有选中的城市，如果没有提醒进行选择
+    if(self.selectedCityIndex == 0)
+    {
+        //显示改变城市的控制器
+        //TODO: object 必须为nil，因为我调用的方法会将object dismiss掉
+        [KNotificationCenter postNotificationName:kMTCityWillChangeNotification object:nil];
+    }
+    else
+    {
+        [KNotificationCenter postNotificationName:kMTCityDidChangedNotification object:nil userInfo:@{kMTCityIndexUserInfoKey:@(self.selectedCityIndex)}];
+        [self.collectionView.mj_header beginRefreshing];
+    }
+}
 -(void)setupLeftBarBtnItem{
     //1.logo
     UIBarButtonItem * logoItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]]];
@@ -181,8 +192,6 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 #pragma mark - add NSNotification
 -(void)addNotification
 {
-    
-    [KNotificationCenter addObserver:self selector:@selector(updateCategoryItem:) name:kMTCategoryDidChangedNotification object:nil];
     
     [KNotificationCenter addObserver:self selector:@selector(updateRegionItem:) name:kMTRegionDidChangedNotification object:nil];
     
@@ -230,7 +239,7 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
     NSString *detailTitle = self.selectedSubregionIndex == 0?region.name:[region.subregions objectAtIndex:self.selectedSubregionIndex];
     [item setDetailTitle:detailTitle];
     
-    
+
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     
     [self.collectionView.mj_header beginRefreshing];
@@ -262,7 +271,6 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 }
 -(void)dealloc
 {
-    [KNotificationCenter removeObserver:self name:kMTCategoryDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTRegionDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTCityDidChangedNotification object:nil];
     [KNotificationCenter removeObserver:self name:kMTSortViewControllerDidNewSortNotification object:nil];
@@ -270,7 +278,7 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 }
 #pragma mark - 响应导航栏方法
 -(void)search:(id)sender{
-  
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
      MTSearchCollectionViewController *searchCVC = [[MTSearchCollectionViewController alloc]init];
     
     searchCVC.city = [MTMetaTool cityByIndex:self.selectedCityIndex].name;
@@ -281,12 +289,12 @@ static NSString *const kMTUserDefaultsCityKey = @"kMTUserDefaultsRegionKey";
 
 //地图搜索
 -(void)location:(id)sender{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     MTNavigationController *navi = [[MTNavigationController alloc]initWithRootViewController:[[MTMapViewController alloc]init]];
     [self presentViewController:navi animated:YES completion:nil];
 }
 -(void)sort{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-
     MTSortViewController *sortVC = [[MTSortViewController alloc]init];;
     UIPopoverController *popoverVC = [[UIPopoverController alloc]initWithContentViewController:sortVC];
     [popoverVC presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

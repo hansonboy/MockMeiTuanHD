@@ -14,6 +14,9 @@
 +(NSArray *)cityGroups;
 +(NSArray *)categories;
 +(MTCategory *)categoryByIndex:(NSInteger)index;
++ (MTCategory *)categoryByName:(NSString *)name;
+/** 返回子类的名称*/
++ (NSString *)subCategoryByMasterIndex:(NSUInteger)index detailIndex:(NSUInteger)detailIndex;
 +(NSArray *)cities;
 +(MTCity *)cityByIndex:(NSInteger)index;
 /** 返回的是包含搜索字符串的选中下标集合*/

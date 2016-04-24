@@ -17,10 +17,10 @@
 @property (nonatomic, copy) void (^success)(id json);
 @property (nonatomic, copy) void (^failure)(NSError *error);
 
-@property (nonatomic, unsafe_unretained) DPAPI *dpapi;
+@property (nonatomic, weak) DPAPI *dpapi;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSDictionary *params;
-@property (nonatomic, unsafe_unretained) id<DPRequestDelegate> delegate;
+@property (nonatomic, weak) id<DPRequestDelegate> delegate;
 
 + (DPRequest *)requestWithURL:(NSString *)url
 					   params:(NSDictionary *)params

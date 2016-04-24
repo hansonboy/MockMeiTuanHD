@@ -38,16 +38,6 @@
                ReferencedContainer = "container:MTHD.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBCFD6FA1CA9662D009990C6"
-               BuildableName = "MTHD.xctest"
-               BlueprintName = "MTHDUITests"
-               ReferencedContainer = "container:MTHD.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

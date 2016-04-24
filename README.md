@@ -87,7 +87,6 @@
 13. 地图分类筛选 
 14. 有多个通知监听者，如果只想让当前界面来接受这些通知，那么我们可以在界面显示的时候添加通知，然后在界面消失的时候移除通知
 15. AFN的优点是：通过使用block，每个请求之间互不干扰，模仿他，我们可以使用block来封装这些代理回调，保证一个请求对应一个成功失败的返回结果的block回调；一种方法是：改写原来的代理，在其中增加成功失败的回调block变量，然后进行保存，在代理回调中进行调用，第二种方法是：通过设立字典，然后key为request,value 为success回调，failure回调
-
 ###知识点
 1. 可以取得所有能看到的cell，visibleCells 
 5. 由于cell重用，如果想要不出差错，那么应该从模型入手 
@@ -103,8 +102,22 @@
 15. placemark.name 在geocoder 地理编码的时候返回的是具体的地点名字如四川省成都市锦江区青年路8号
 ，在反地理编码时候，这个值返回的是青年路8号，记住传入一个全地址的时候，placemark.name 就是全地址就好了
 
+### 第六天
+1. 修复bug：
+	2. 	不能添加地图标注，原因是因为我的经纬度填反了，天哪，这个错误找了好几天没有找到，后来在stackoverflow上看到了，有人提醒了我
+	2. /在地图页面已经被返回的时候，这时候回调正好回来了，而原来的变量已经不见了，这时候报了一个bad_exe_memory，原因是修饰__unsafe_unretained ，改为weak就好了
+	3. 主页的各种bug，如一回到主页就刷新，我们想做的时候只有在第一次加载进入的时候才自动刷新，还有就是点击顶部控件的各种bug
+2. 使用单元测试来测试某些可能有问题的工具函数
 
-###开发过程中约到的一些问题和知识点
+
+###知识点
+1. 如何在单元测试中测试异步函数，block回调这种
+3. 大概有四种方法：1.runloop 阻塞主进程等待结果 2.semphaore 阻塞主进程等待结果  3.使用XCTestExpectation 阻塞主线程等待（我用这个，xcode自带的，为啥不用） 4.使用第三方的库函数
+2. 参考
+	- [如何在xcode 6中进行异步函数的单元测试](http://stackoverflow.com/questions/24704338/xctest-and-asynchronous-testing-in-xcode-6/35744962#35744962)
+	- [如何在单元测试中测试异步函数](http://stackoverflow.com/questions/15609219/testing-asynchronous-call-in-unit-test-in-ios)
+
+##开发过程中约到的一些问题和知识点
 1.	pch 的添加： 在build setting 中搜索 prefix header，添加/path/to/yourPch.pch
 1.  当设置使用了popverController的contentViewController 设置了autolayout 的时候，在显示的时候发现控件不显示，原因可能是因为自动伸缩变化	
 	 两种方法：

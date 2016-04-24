@@ -4,7 +4,7 @@
 //
 //  Created by ZhouHui on 13-1-28.
 //  Copyright (c) 2013年 Dianping. All rights reserved.
-//
+//bug: 在地图页面已经被返回的时候，这时候回调正好回来了，而原来的变量已经不见了，原因是修饰符__unsafe_unretained ，改为weak就好了
 
 #import "DPRequest.h"
 #import "DPConstants.h"
